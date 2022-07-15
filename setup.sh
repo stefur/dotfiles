@@ -6,8 +6,8 @@ dotfiles=$(pwd)
 
 # Set up zsh
 mkdir -p ~/.zsh
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh
-git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh/zsh-autosuggestions
 
 ln -s ${dotfiles}/zprofile ~/.zprofile
 ln -s ${dotfiles}/zshrc ~/.zshrc
