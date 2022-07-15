@@ -16,6 +16,7 @@ ln -s ${dotfiles}/zshrc ~/.zshrc
 mkdir -p ~/.vim/colors
 curl -O https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim
 mv jellybeans.vim ~/.vim/colors
+sed -i 's/let s:background_color = "151515"/let s:background_color = "1E1D2F"/' ~/.vim/colors/jellybeans.vim
 ln -s ${dotfiles}/vimrc ~/.vimrc
 
 # Set up the rest of the config files and scripts
