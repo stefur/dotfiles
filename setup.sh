@@ -14,7 +14,7 @@ ln -s ${dotfiles}/zshrc ~/.zshrc
 
 # Set up vim
 mkdir -p ~/.vim/colors
-curl  -O https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim
+curl -O https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim
 mv jellybeans.vim ~/.vim/colors
 ln -s ${dotfiles}/vimrc ~/.vimrc
 
