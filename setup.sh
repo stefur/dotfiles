@@ -4,6 +4,7 @@
 
 dotfiles=$(pwd)
 
+# Set up zsh
 mkdir -p ~/.zsh
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh
@@ -11,10 +12,13 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh
 ln -s ${dotfiles}/zprofile ~/.zprofile
 ln -s ${dotfiles}/zshrc ~/.zshrc
 
-mkdir -p ~/.vim
-ln -s ${dotfiles}/vim ~/.vim
+# Set up vim
+mkdir -p ~/.vim/colors
+curl  -O https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim
+mv jellybeans.vim ~/.vim/colors
 ln -s ${dotfiles}/vimrc ~/.vimrc
 
+# Set up the rest of the config files and scripts
 mkdir -p ~/.config
 mkdir -p ~/.local/bin
 
