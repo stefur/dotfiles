@@ -1,0 +1,161 @@
+#!/bin/sh
+
+# Autostart, but only if we're not reloading
+if ! pgrep -x "rivertile" > /dev/null; then
+    autostart.sh
+fi
+
+# Modkeys
+mod="Mod4"
+alt="Mod1"
+shift="Shift"
+ctrl="Control"
+
+# Command to control Spotify
+music_ctrl="dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player."
+
+scratch_tag=$((1 << 20))
+
+# Set spawn tagmask to ensure new windows don't have the scratchpad tag unless
+# explicitly set.
+all_but_scratch_tag=$(( ((1 << 32) - 1) ^ $scratch_tag ))
+riverctl spawn-tagmask ${all_but_scratch_tag}
+
+# Define a set of keybinds
+# At some point I should implement keybinds for volume/brightness in locked mode too
+
+#TODO
+# Hide/toggle Waybar when it gets updated in the repos
+
+# Move and resize windows with mouse buttons
+riverctl map-pointer normal $mod BTN_LEFT move-view
+riverctl map-pointer normal $mod BTN_RIGHT resize-view
+
+# Spawn various apps
+riverctl map normal $mod Return spawn alacritty
+riverctl map normal $mod W spawn firefox
+riverctl map normal $mod C spawn signal-desktop
+riverctl map normal $mod S spawn spotify
+riverctl map normal $mod D spawn Discord
+riverctl map normal $mod R spawn fuzzel.sh
+riverctl map normal $mod+$ctrl Return spawn pcmanfm
+
+# Lock the screen
+riverctl map normal $mod L spawn lock.sh
+
+# Take a screenshot
+riverctl map normal $mod P spawn 'grim -g "$(slurp)" - | wl-copy'
+
+# Close a window
+riverctl map normal $mod+$shift C close
+
+# Toggle and set scratchtag
+riverctl map normal $mod+$shift Return toggle-focused-tags ${scratch_tag}
+riverctl map normal $mod+$alt Return set-view-tags ${scratch_tag}
+
+# Fullscreen and float toggles
+riverctl map normal $mod F toggle-fullscreen
+riverctl map normal $mod+$shift F toggle-float
+
+# Notification callbacks
+riverctl map normal $mod+$shift B spawn 'callbacks.sh battery'
+riverctl map normal $mod+$shift D spawn 'callbacks.sh date'
+riverctl map normal $mod+$shift W spawn 'callbacks.sh wifi'
+riverctl map normal $mod Q spawn 'callbacks.sh mic'
+
+# Jump between tags
+riverctl map normal $mod Tab focus-previous-tags
+
+# Reload the config
+riverctl map normal $mod+$shift R spawn $HOME/.config/river/init
+
+# Exit River
+riverctl map normal $mod+$shift Q exit
+
+# Move focus around
+riverctl map normal $mod Right focus-view next
+riverctl map normal $mod Up focus-view previous
+riverctl map normal $mod Left focus-view previous
+riverctl map normal $mod Down focus-view next
+
+# Move windows around the stack
+riverctl map normal $mod+$shift Right swap next
+riverctl map normal $mod+$shift Up swap next
+riverctl map normal $mod+$shift Down swap previous
+
+# Move window directly to main
+riverctl map normal $mod+$shift Left zoom
+
+# Switch output focus
+riverctl map normal $mod Period focus-output next
+riverctl map normal $mod Comma focus-output previous
+
+# Send view to output
+riverctl map normal $mod+$shift Comma send-to-output previous
+riverctl map normal $mod+$shift Period send-to-output next
+
+# Adjust the ratio and reset it
+riverctl map normal $mod+$alt Left send-layout-cmd rivertile 'main-ratio -0.05'
+riverctl map normal $mod+$alt Right send-layout-cmd rivertile 'main-ratio +0.05'
+riverctl map normal $mod+$shift Space send-layout-cmd rivertile 'main-ratio 0.5'
+
+# Music controls
+riverctl map normal $mod 7 spawn "${music_ctrl}Previous"
+riverctl map normal $mod 8 spawn "${music_ctrl}PlayPause"
+riverctl map normal $mod 9 spawn "${music_ctrl}Next"
+
+# Screen brightness control
+riverctl map normal None XF86MonBrightnessDown spawn 'brightnessctl set 5%-'
+riverctl map normal None XF86MonBrightnessUp spawn 'brightnessctl set +5%'
+
+# Volume controls
+riverctl map normal None XF86AudioRaiseVolume spawn 'pactl set-sink-volume 0 +5%'
+riverctl map normal None XF86AudioLowerVolume spawn 'pactl set-sink-volume 0 -5%'
+riverctl map normal None XF86AudioMute spawn 'pactl set-sink-mute 0 toggle'
+# Extra mute button in case of no mediakeys
+riverctl map normal $mod+$shift M spawn 'pactl set-sink-mute 0 toggle'
+
+# Set up 6 tags and create appropriate keybinds for them"""
+for i in $(seq 1 6); do
+    tag=$((1 << ($i - 1)))
+    riverctl map normal $mod $i set-focused-tags $tag
+    riverctl map normal $mod+$shift $i set-view-tags $tag
+done
+
+# Get all tags
+all_tags=$(((1 << 6) - 1))
+riverctl map normal $mod 0 set-focused-tags $all_tags
+
+# Set background and border color
+riverctl border-color-focused 0xC9CBFF
+riverctl border-color-unfocused 0x6E6C7E
+riverctl border-width 2
+
+# Set repeat rate
+riverctl set-repeat 50 300
+
+# Set app-ids of views which should float
+riverctl float-filter-add app-id float
+
+# Set app-ids of views which should use client side decorations
+riverctl csd-filter-add app-id firefox
+
+# Set touchpad by grabbing the event
+for pad in $(riverctl list-inputs | grep -i touchpad )
+do
+  riverctl input $pad events enabled
+  riverctl input $pad tap enabled
+  riverctl input $pad natural-scroll enabled
+done
+
+# Focus should follow cursor...
+riverctl focus-follows-cursor normal
+
+# ...and warp it if another output is focused (not in Void version yet, sadly)
+# riverctl set-cursor-warp on-output-changed
+
+# Set and exec into the default layout generator, rivertile.
+# River will send the process group of the init executable SIGTERM on exit.
+riverctl default-layout rivertile
+rivertile -outer-padding 0 -view-padding 0 -main-ratio 0.5
+

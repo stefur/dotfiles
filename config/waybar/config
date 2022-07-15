@@ -1,0 +1,63 @@
+{
+  "modules-left": [
+    "river/tags",
+    "river/window"
+  ],
+  "modules-right": [
+    "custom/spotify",
+    "tray",
+    "battery",
+    "network",
+    "pulseaudio",
+    "clock"
+  ],
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%e %B (%A) \nWeek %V}",
+    "interval": 60,
+  },
+  "custom/spotify": {
+    "interval": "once",
+    "exec": "cat /tmp/lystra_output.txt",
+    "signal": 8,
+    "on-click": "callbacks.sh playpause",
+    "on-click-right": "callbacks.sh nextsong",
+    "tooltip": false
+  },
+  "battery": {
+    "format": "{icon}",
+    "format-charging": "{icon} ",
+    "format-plugged": "{icon} ",
+    "format-icons": ["", "", "", "", "", "", "", "", "", ""],
+    "interval": 120,
+    "tooltip-format": "{capacity}% \n{time}",
+  },
+  "network": {
+    "format-wifi": "直",
+    "format-linked": "直 <no ip>",
+    "format-disconnected": "睊",
+    "on-click": "alacritty -e pkexec connmanctl",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}"
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10
+  },
+  "pulseaudio": {
+    "format": "{icon}",
+    "tooltip-format": "{volume}%",
+    "format-muted": "婢",
+    "format-icons": {
+    "default": ["", "", ""]
+    },
+    "on-click": "pactl set-sink-mute 0 toggle"
+  },
+  "river/tags": {
+    "num-tags": 6,
+  },
+  "river/window": {
+    "tooltip": false,
+    "max-length": 75
+  }
+}
+
