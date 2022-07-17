@@ -48,6 +48,7 @@ window#waybar {
 
 #pulseaudio,
 #battery,
+#custom-idle,
 #tray,
 #network {
     color: #C9CBFF;

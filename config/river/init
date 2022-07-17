@@ -38,10 +38,12 @@ riverctl map normal $mod C spawn signal-desktop
 riverctl map normal $mod S spawn spotify
 riverctl map normal $mod D spawn Discord
 riverctl map normal $mod R spawn fuzzel.sh
+riverctl map normal $mod N spawn 'alacritty -e newsboat -C=~/.config/newsboat/config -u=~/sync/files/newsboat/urls'
 riverctl map normal $mod+$ctrl Return spawn pcmanfm
 
-# Lock the screen
+# Lock the screen and toggle swayidle
 riverctl map normal $mod L spawn lock.sh
+riverctl map normal $mod I spawn 'idle.sh'
 
 # Take a screenshot
 riverctl map normal $mod P spawn 'grim -g "$(slurp)" - | wl-copy'

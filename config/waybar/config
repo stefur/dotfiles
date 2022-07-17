@@ -6,6 +6,7 @@
   "modules-right": [
     "custom/spotify",
     "tray",
+    "custom/idle",
     "battery",
     "network",
     "pulseaudio",
@@ -14,7 +15,7 @@
   "clock": {
     "format": "{:%H:%M}",
     "tooltip-format": "{:%e %B (%A) \nWeek %V}",
-    "interval": 60,
+    "interval": 60
   },
   "custom/spotify": {
     "interval": "once",
@@ -24,13 +25,20 @@
     "on-click-right": "callbacks.sh nextsong",
     "tooltip": false
   },
+  "custom/idle": {
+    "interval": "once",
+    "exec": "if pgrep swayidle > /dev/null; then echo ''; else echo '﯈'; fi",
+    "signal": 7,
+    "on-click": "idle.sh",
+    "tooltip": false
+  },
   "battery": {
     "format": "{icon}",
     "format-charging": "{icon} ",
     "format-plugged": "{icon} ",
     "format-icons": ["", "", "", "", "", "", "", "", "", ""],
     "interval": 120,
-    "tooltip-format": "{capacity}% \n{time}",
+    "tooltip-format": "{capacity}% \n{time}"
   },
   "network": {
     "format-wifi": "直",
@@ -50,10 +58,11 @@
     "format-icons": {
     "default": ["", "", ""]
     },
-    "on-click": "pactl set-sink-mute 0 toggle"
+    "on-click": "pactl set-sink-mute 0 toggle",
+    "on-click-right": "pavucontrol"
   },
   "river/tags": {
-    "num-tags": 6,
+    "num-tags": 6
   },
   "river/window": {
     "tooltip": false,

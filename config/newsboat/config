@@ -1,0 +1,17 @@
+browser "firefox %u"
+include /usr/share/doc/newsboat/contrib/colorschemes/inkpot
+auto-reload yes
+reload-threads 100
+reload-time 5
+highlight feedlist "---.*---" magenta default bold
+highlight feedlist ".*0/0.." default default invis
+confirm-mark-all-feeds-read no
+confirm-mark-feed-read no
+download-full-page yes
+keep-articles-days 7
+mark-as-read-on-hover yes
+refresh-on-startup yes
+feedlist-title-format "%N %V"
+feedlist-format "%S %U %t %T"
+articlelist-format "%D %t"
+datetime-format "%d %B, %H:%M"
