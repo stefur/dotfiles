@@ -27,9 +27,8 @@ mako &
 wlsunset -l 59.34857:17.87905 &
 
 # Lock the screen after 300 seconds, turn off the screen after another 300
-# and also lock the screen  before sleep
-idle.sh &
+# and also lock the screen  before sleep, this command is the same as idle.sh
+swayidle -w	timeout 300 "lock.sh" timeout 600 "wlopm --off '*'" timeout 900 "loginctl suspend" resume "wlopm --on '*'" before-sleep "lock.sh" &
 
 # Polkit agent
 /usr/libexec/polkit-gnome-authentication-agent-1 &
-
