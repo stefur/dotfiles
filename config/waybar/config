@@ -28,18 +28,19 @@
   },
   "custom/idle": {
     "interval": "once",
-    "exec": "if pgrep swayidle > /dev/null; then echo ''; else echo '﯈'; fi",
+    "exec": "idle.sh status",
     "signal": 7,
-    "on-click": "idle.sh",
+    "on-click": "idle.sh toggle",
     "tooltip": false
   },
   "battery": {
     "format": "{icon}",
-    "format-charging": "{icon} ",
-    "format-plugged": "{icon} ",
+    "format-charging": "{icon}",
+    "format-plugged": "{icon}",
+    "format-not-charging": "{icon}",
     "format-icons": ["", "", "", "", "", "", "", "", "", ""],
     "interval": 120,
-    "tooltip-format": "{capacity}% \n{time}"
+    "tooltip-format": "{capacity}% \n{timeTo}"
   },
   "network": {
     "format-wifi": "直",
@@ -54,7 +55,6 @@
   },
   "pulseaudio": {
     "format": "{icon}",
-    "format-bluetooth": "{icon} ",
     "tooltip-format": "{volume}%",
     "format-muted": "婢",
     "format-icons": {
