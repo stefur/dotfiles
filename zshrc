@@ -1,5 +1,6 @@
+# Save most-recent 1000 lines
 HISTSIZE=20000
-SAVEHIST=10000  # Save most-recent 1000 lines
+SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
 # Override autosuggest color
@@ -7,6 +8,15 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#e7c664,underline"
 
 # Set the prompt
 PROMPT="%B%F{66}%n%f%b %B%F{102}%~%f%b %B%F{102}$%f%b "
+
+# Use gpg-agent instead of ssh-agent
+unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+fi
+export GPG_TTY=$(tty)
+
+gpg-connect-agent updatestartuptty /bye >/dev/null
 
 # Navigation
 alias ..='cd ..'
