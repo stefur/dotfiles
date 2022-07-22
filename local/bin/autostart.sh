@@ -30,5 +30,9 @@ wlsunset -l 59.34857:17.87905 &
 # and also lock the screen  before sleep, this command is the same as idle.sh
 idle.sh startup &
 
+# Useful to prevent idle when watching movies etc.
+# Not yet in the current version of river on the void repos, leaving it here for future reference
+# sway-audio-idle-inhibit &
+
 # Polkit agent
 /usr/libexec/polkit-gnome-authentication-agent-1 &

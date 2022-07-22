@@ -1,8 +1,10 @@
 * {
+    border: none;
     border-radius: 0;
+    min-height: 0;
     font-family: "FiraMono Nerd Font", monospace;
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 13px;
+    font-weight: 500;
 }
 
 window#waybar {
@@ -61,4 +63,8 @@ window#waybar {
 #window {
     color: #D9E0EE;
     padding: 8px;
+}
+
+#bluetooth {
+    font-size: 14px;
 }
