@@ -40,13 +40,15 @@ riverctl map normal $mod D spawn Discord
 riverctl map normal $mod R spawn fuzzel.sh
 riverctl map normal $mod N spawn 'alacritty -e newsboat -C=~/.config/newsboat/config -u=~/sync/files/newsboat/urls -c=~/sync/files/newsboat/cache.db'
 riverctl map normal $mod+$ctrl Return spawn pcmanfm
+riverctl map normal $mod M spawn mount.sh
+riverctl map normal $mod P spawn pass.sh
 
 # Lock the screen and toggle swayidle
 riverctl map normal $mod L spawn lock.sh
 riverctl map normal $mod I spawn 'idle.sh toggle'
 
 # Take a screenshot
-riverctl map normal $mod P spawn 'grim -g "$(slurp)" - | wl-copy'
+riverctl map normal $mod+$shift P spawn 'grim -g "$(slurp)" - | wl-copy'
 
 # Close a window
 riverctl map normal $mod+$shift C close
