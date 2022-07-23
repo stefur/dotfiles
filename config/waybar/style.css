@@ -8,7 +8,8 @@
 }
 
 window#waybar {
-    background-color: rgba(22,19,32,1);
+    background-color: rgba(22, 19, 32, 1);
+    /* #161320 */
 }
 
 #tags button {
