@@ -32,13 +32,13 @@ riverctl map-pointer normal $mod BTN_LEFT move-view
 riverctl map-pointer normal $mod BTN_RIGHT resize-view
 
 # Spawn various apps
-riverctl map normal $mod Return spawn alacritty
+riverctl map normal $mod Return spawn foot
 riverctl map normal $mod W spawn firefox
 riverctl map normal $mod C spawn signal-desktop
 riverctl map normal $mod S spawn spotify
 riverctl map normal $mod D spawn Discord
 riverctl map normal $mod R spawn fuzzel.sh
-riverctl map normal $mod N spawn 'alacritty -e newsboat -C=~/.config/newsboat/config -u=~/sync/files/newsboat/urls -c=~/sync/files/newsboat/cache.db'
+riverctl map normal $mod N spawn 'foot newsboat -C=~/.config/newsboat/config -u=~/sync/files/newsboat/urls -c=~/sync/files/newsboat/cache.db'
 riverctl map normal $mod+$ctrl Return spawn pcmanfm
 riverctl map normal $mod M spawn mount.sh
 riverctl map normal $mod P spawn pass.sh
@@ -162,4 +162,3 @@ riverctl focus-follows-cursor normal
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
 rivertile -outer-padding 0 -view-padding 0 -main-ratio 0.5
-

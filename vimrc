@@ -18,6 +18,12 @@ set number
 " set cursorline
 :autocmd InsertEnter,InsertLeave * set cul!
 
+" Enable modified arrow keys, see  :help arrow_modifiers
+execute "silent! set <xUp>=\<Esc>[@;*A"
+execute "silent! set <xDown>=\<Esc>[@;*B"
+execute "silent! set <xRight>=\<Esc>[@;*C"
+execute "silent! set <xLeft>=\<Esc>[@;*D"
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -38,40 +44,18 @@ set ww+=<,>,[,]
 " => Cursor
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Set different colors for the cursor, depening on input or viusal mode
-if &term =~ "xterm\\|alacritty"
-  " use an orange cursor in insert mode
-  let &t_SI = "\<Esc>]12;orange\x7"
-  " use a red cursor otherwise
-  let &t_EI = "\<Esc>]12;red\x7"
-  silent !echo -ne "\033]12;red\007"
-  " reset cursor when vim exits
-  autocmd VimLeave * silent !echo -ne "\033]112\007"
-  " use \003]12;gray\007 for gnome-terminal and rxvt up to version 9.21
-endif
-
 " Allow setting the cursor to the end of a string in visual mode
 set virtualedit=onemore
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Fixing colors
-if has('termguicolors')
-    set termguicolors
-endif
+
+let &termguicolors = v:true
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 :colorscheme jellybeans
-
-""let g:edge_enable_italic = 1
-""let g:edge_disable_italic_comment = 1
-
-""let g:material_terminal_italics = 1
-""let g:material_theme_style = 'ocean'
-""let g:sonokai_style = 'shusia'
-""let g:sonokai_enable_italic = 1
-""colorscheme sonokai
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Mouse Scrolling

@@ -4,6 +4,7 @@ export ELM_DISPLAY=wl
 export QT_QPA_PLAYFORM=wayland-egl
 export MOZ_ENABLE_WAYLAND=1
 export EDITOR="vim"
+export TERM="foot"
 
 # Path
 if [ -d "$HOME/.local/bin" ] ;
