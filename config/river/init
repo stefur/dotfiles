@@ -42,6 +42,7 @@ riverctl map normal $mod N spawn 'foot newsboat -C=~/.config/newsboat/config -u=
 riverctl map normal $mod+$ctrl Return spawn pcmanfm
 riverctl map normal $mod M spawn mount.sh
 riverctl map normal $mod P spawn pass.sh
+riverctl map normal $mod E spawn emojis.sh
 
 # Lock the screen and toggle swayidle
 riverctl map normal $mod L spawn lock.sh
