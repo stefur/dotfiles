@@ -26,6 +26,9 @@ mako &
 # Adjust screen lighting to location
 wlsunset -l 59.34857:17.87905 &
 
+# Multimonitor management
+kanshi &
+
 # Lock the screen after 300 seconds, turn off the screen after another 300
 # and also lock the screen  before sleep, this command is the same as idle.sh
 idle.sh startup &
