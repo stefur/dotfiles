@@ -57,7 +57,7 @@
     "format-wifi": "直",
     "format-linked": "直 <no ip>",
     "format-disconnected": "睊",
-    "on-click": "foot pkexec connmanctl",
+    "on-click": "foot connmanctl",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}"
   },
   "tray": {

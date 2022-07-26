@@ -34,7 +34,7 @@ riverctl map-pointer normal $mod BTN_RIGHT resize-view
 # Spawn various apps
 riverctl map normal $mod Return spawn foot
 riverctl map normal $mod W spawn firefox
-riverctl map normal $mod C spawn signal-desktop
+riverctl map normal $mod C spawn 'foot gurk'
 riverctl map normal $mod S spawn spotify
 riverctl map normal $mod D spawn Discord
 riverctl map normal $mod R spawn fuzzel.sh

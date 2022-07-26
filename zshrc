@@ -43,7 +43,6 @@ alias rm='rm -i'
 
 # Electron app flags for wayland
 alias Discord="Discord --enable-features=UseOzonePlatform --ozone-platform=wayland"
-alias signal-desktop="signal-desktop --enable-features=UseOzonePlatform --ozone-platform=wayland"
 
 # adding flags
 alias df='df -h'                          # human-readable sizes
