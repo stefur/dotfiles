@@ -52,7 +52,7 @@ window#waybar {
 #pulseaudio,
 #battery,
 #bluetooth,
-#custom-idle,
+#idle_inhibitor,
 #tray,
 #network {
     color: #C9CBFF;

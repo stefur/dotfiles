@@ -44,9 +44,8 @@ riverctl map normal $mod M spawn mount.sh
 riverctl map normal $mod P spawn pass.sh
 riverctl map normal $mod E spawn emojis.sh
 
-# Lock the screen and toggle swayidle
+# Lock the screen
 riverctl map normal $mod L spawn lock.sh
-riverctl map normal $mod I spawn 'idle.sh toggle'
 
 # Take a screenshot
 riverctl map normal $mod+$shift P spawn 'grim -g "$(slurp)" - | wl-copy'

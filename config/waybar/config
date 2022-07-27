@@ -7,7 +7,7 @@
     "custom/spotify",
     "tray",
     "bluetooth",
-    "custom/idle",
+    "idle_inhibitor",
     "battery",
     "network",
     "pulseaudio",
@@ -24,13 +24,6 @@
     "signal": 8,
     "on-click": "callbacks.sh playpause",
     "on-click-right": "callbacks.sh nextsong",
-    "tooltip": false
-  },
-  "custom/idle": {
-    "interval": "once",
-    "exec": "idle.sh status",
-    "signal": 7,
-    "on-click": "idle.sh toggle",
     "tooltip": false
   },
   "battery": {
@@ -63,6 +56,13 @@
   "tray": {
     "icon-size": 18,
     "spacing": 10
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": "﯈"
+    }
   },
   "pulseaudio": {
     "format": "{icon}",
