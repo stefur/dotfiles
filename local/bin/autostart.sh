@@ -11,7 +11,7 @@ swaybg -m fill -i ~/wallpapers/$file &
 waybar &
 
 # And my Spotify listener :)
-lystra &
+lystra --playing "契" --paused "" &
 
 # And then syncthing to keep files all up to date
 syncthing &
