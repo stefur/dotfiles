@@ -7,6 +7,9 @@ brightnessctl set 20%
 file=$(ls ~/wallpapers | shuf -n 1)
 swaybg -m fill -i ~/wallpapers/$file &
 
+# Blur the wallpaper and put a copy in tmp location for lock screen usage
+convert ~/wallpapers/$file -blur 16x8 /tmp/lock_img.jpg &
+
 # Start the bar...
 waybar &
 
