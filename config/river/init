@@ -155,8 +155,8 @@ done
 # Focus should follow cursor...
 riverctl focus-follows-cursor normal
 
-# ...and warp it if another output is focused (not in Void version yet, sadly)
-# riverctl set-cursor-warp on-output-changed
+# ...and warp it if another output is focused
+riverctl set-cursor-warp on-output-changed
 
 # Set and exec into the default layout generator, rivertile.
 # River will send the process group of the init executable SIGTERM on exit.
