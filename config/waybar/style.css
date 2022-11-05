@@ -12,19 +12,23 @@ window#waybar {
     /* #161320 */
 }
 
+/* https://github.com/Alexays/Waybar/issues/1763 */
+button {
+    border: none;
+    border-radius: 0;
+}
+
+button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background: inherit;
+}
+
 #tags button {
     padding: 5px;
     color: #6E6C7E;
     border: #161320;
     transition-property: none;
-}
-
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-#tags button:hover {
-    box-shadow: inherit;
-    text-shadow: inherit;
-    background: #161320;
-    border: #161320;
 }
 
 #tags button.focused {
