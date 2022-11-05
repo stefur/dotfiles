@@ -48,7 +48,7 @@
   },
   "network": {
     "format-wifi": "直",
-    "format-linked": "直 <no ip>",
+    "format-linked": "直  No IP",
     "format-disconnected": "睊",
     "on-click": "foot connmanctl",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}"
