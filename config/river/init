@@ -146,6 +146,8 @@ riverctl set-repeat 50 300
 # Set app-ids of views which should float
 riverctl float-filter-add app-id newsboat
 riverctl float-filter-add app-id pavucontrol
+riverctl float-filter-add app-id bluetoothctl
+riverctl float-filter-add app-id connmanctl
 riverctl float-filter-add title "Execute File"
 
 # Set touchpad by grabbing the event
