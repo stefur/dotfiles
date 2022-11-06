@@ -47,10 +47,12 @@
     "tooltip-format": "{capacity}% \n{timeTo}"
   },
   "network": {
+    "format": "",
     "format-wifi": "直",
     "format-linked": "直  No IP",
     "format-disconnected": "睊",
     "on-click": "foot connmanctl",
+    "on-click-right": "wifi.sh",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}"
   },
   "tray": {
