@@ -3,6 +3,9 @@
 # Set the brightness since it defaults to 100% on boot
 brightnessctl set 20%
 
+# Start the gpg agent
+gpg-connect-agent &
+
 # Pick a random wallpaper
 file=$(ls ~/wallpapers | shuf -n 1)
 swaybg -m fill -i ~/wallpapers/$file &

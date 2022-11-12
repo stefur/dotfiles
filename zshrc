@@ -16,7 +16,19 @@ if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
 fi
 export GPG_TTY=$(tty)
 
-gpg-connect-agent updatestartuptty /bye >/dev/null
+# Fixing some keys to work as I expect them to
+# ctrl-left and ctrl-right
+bindkey "\e[1;5D" backward-word
+bindkey "\e[1;5C" forward-word
+# ctrl-bs and ctrl-del
+bindkey "\e[3;5~" kill-word
+bindkey "\C-_"    backward-kill-word
+# del, home and end
+bindkey "\e[3~" delete-char
+bindkey "\e[H"  beginning-of-line
+bindkey "\e[F"  end-of-line
+# alt-bs
+bindkey "\e\d"  undo
 
 # Navigation
 alias ..='cd ..'
