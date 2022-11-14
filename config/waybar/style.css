@@ -73,3 +73,11 @@ button:hover {
 #bluetooth {
     font-size: 14px;
 }
+
+#battery.discharging.warning {
+    color: #F5C211;
+}
+
+#battery.discharging.critical {
+    color: #E01B24;
+}
