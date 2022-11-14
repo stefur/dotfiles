@@ -150,6 +150,7 @@ riverctl float-filter-add app-id bluetoothctl
 riverctl float-filter-add app-id connmanctl
 riverctl float-filter-add title "Execute File" # Running appimages from pcmanfm
 riverctl float-filter-add title "Open Folder" # VS Code open folder dialog
+riverctl float-filter-add title "Paradox Launcher" # Game launcher for CK3
 
 # Set touchpad by grabbing the event
 for pad in $(riverctl list-inputs | grep -i touchpad )
