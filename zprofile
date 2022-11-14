@@ -1,5 +1,5 @@
 export XKB_DEFAULT_LAYOUT=se
-export SDL_VIDEODRIVER=wayland
+# export SDL_VIDEODRIVER=wayland # this causes issues launching some Steam games.
 export ELM_DISPLAY=wl
 export QT_QPA_PLATFORM=xcb
 export MOZ_ENABLE_WAYLAND=1
