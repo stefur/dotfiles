@@ -27,9 +27,10 @@ riverctl spawn-tagmask ${all_but_scratch_tag}
 #TODO
 # Hide/toggle Waybar when it gets updated in the repos
 
-# Move and resize windows with mouse buttons
+# Move, resize and toggle floating windows with mouse buttons
 riverctl map-pointer normal $mod BTN_LEFT move-view
 riverctl map-pointer normal $mod BTN_RIGHT resize-view
+#riverctl map-pointer normal $mod BTN_MIDDLE toggle-float
 
 # Spawn various apps
 riverctl map normal $mod Return spawn foot
@@ -149,7 +150,9 @@ riverctl float-filter-add app-id pavucontrol
 riverctl float-filter-add app-id bluetoothctl
 riverctl float-filter-add app-id connmanctl
 riverctl float-filter-add title "Execute File" # Running appimages from pcmanfm
-riverctl float-filter-add title "Open Folder" # VS Code open folder dialog
+riverctl float-filter-add title "Open Folder" # VS Code dialog
+riverctl float-filter-add title "Open File" # VS Code dialog
+riverctl float-filter-add title "Save As" # VS Code dialog
 riverctl float-filter-add title "Paradox Launcher" # Game launcher for CK3
 
 # Set touchpad by grabbing the event
@@ -169,4 +172,4 @@ riverctl set-cursor-warp on-output-changed
 # Set and exec into the default layout generator, rivertile.
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
-rivertile -outer-padding 0 -view-padding 0 -main-ratio 0.5
+rivertile -outer-padding 0 -view-padding 0 -main-ratio 0.5 &
