@@ -23,10 +23,15 @@ ln -s ${dotfiles}/vimrc ~/.vimrc
 mkdir -p ~/.config
 mkdir -p ~/.local/bin
 
+# Install the config files
 for file in ${dotfiles}/config/*; do
     ln -s ${file} ~/.config/
 done
 
+# Install scripts
 for file in ${dotfiles}/local/bin/*; do
     ln -s ${file} ~/.local/bin/
 done
+
+# Install the kernel hook
+sudo -p "We need sudo to install the vkpurge kernel hook. Password:" ln -s ${dotfiles}/etc/kernel.d/post-install/60-vkpurge /etc/kernel.d/post-install

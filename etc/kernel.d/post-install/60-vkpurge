@@ -1,0 +1,5 @@
+#!/bin/bash
+# Hook to remove next to last kernel to the new kernel
+
+vkpurge rm all
+exit 0
