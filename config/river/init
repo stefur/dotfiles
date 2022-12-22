@@ -169,6 +169,9 @@ riverctl focus-follows-cursor normal
 # ...and warp it if another output is focused
 riverctl set-cursor-warp on-output-changed
 
+# xcursor theme
+riverctl xcursor-theme Adwaita
+
 # Set and exec into the default layout generator, rivertile.
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
