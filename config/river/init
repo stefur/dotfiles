@@ -24,8 +24,8 @@ riverctl spawn-tagmask ${all_but_scratch_tag}
 # Define a set of keybinds
 # At some point I should implement keybinds for volume/brightness in locked mode too
 
-#TODO
-# Hide/toggle Waybar when it gets updated in the repos
+# Toggle visibility of Waybar
+riverctl map normal $mod B spawn 'pkill -SIGUSR1 waybar'
 
 # Move, resize and toggle floating windows with mouse buttons
 riverctl map-pointer normal $mod BTN_LEFT move-view
