@@ -9,7 +9,8 @@
     "bluetooth",
     "idle_inhibitor",
     "battery",
-    "network",
+    "network#vpn",
+    "network#wifi",
     "pulseaudio",
     "clock"
   ],
@@ -50,13 +51,23 @@
     },
     "tooltip-format": "{capacity}% \n{timeTo}"
   },
-  "network": {
+  "network#vpn": {
+    "interface": "wg0",
+    "format": "嬨",
+    "format-wifi": "嬨",
+    "format-linked": "嬨  No IP",
+    "format-disconnected": "",
+    "on-click": "pkexec wg-quick down wg0",
+    "tooltip-format": "{ipaddr}"
+  },
+  "network#wifi": {
     "format": "",
     "format-wifi": "直",
     "format-linked": "直  No IP",
     "format-disconnected": "睊",
     "on-click": "foot --app-id='connmanctl' connmanctl",
     "on-click-right": "wifi.sh",
+    "on-click-middle": "pkexec wg-quick up wg0",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}"
   },
   "tray": {
