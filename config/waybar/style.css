@@ -8,8 +8,8 @@
 }
 
 window#waybar {
-    background-color: rgba(22, 19, 32, 1);
-    /* #161320 */
+    background-color: rgba(22, 22, 29, 1);
+    /* #16161D */
 }
 
 /* https://github.com/Alexays/Waybar/issues/1763 */
@@ -25,32 +25,32 @@ button:hover {
 }
 
 #tags button {
-    padding: 5px;
-    color: #6E6C7E;
-    border: #161320;
+    padding: 6px;
+    color: #54546D;
+    border: #16161D;
     transition-property: none;
 }
 
 #tags button.focused {
-    color: #161320;
-    background-color: #C9CBFF;
+    color: #16161D;
+    background-color: #9CABCA;
 }
 
 #tags button.occupied {
-    color: #C9CBFF;
+    color: #9CABCA;
 }
 
 #tags button.urgent {
-    color: #F28FAD;
+    color: #E46876;
 }
 
 #tags button.occupied.urgent {
-    color: #F28FAD;
+    color: #E46876;
 }
 
 #tags button.focused.occupied {
-    color: #161320;
-    background-color: #C9CBFF;
+    color: #16161D;
+    background-color: #9CABCA;
 }
 
 #pulseaudio,
@@ -79,9 +79,9 @@ button:hover {
 }
 
 #battery.discharging.warning {
-    color: #F5C211;
+    color: #FFA066;
 }
 
 #battery.discharging.critical {
-    color: #E01B24;
+    color: #E46876;
 }

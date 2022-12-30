@@ -21,16 +21,12 @@ scratch_tag=$((1 << 20))
 all_but_scratch_tag=$(( ((1 << 32) - 1) ^ $scratch_tag ))
 riverctl spawn-tagmask ${all_but_scratch_tag}
 
-# Define a set of keybinds
-# At some point I should implement keybinds for volume/brightness in locked mode too
-
 # Toggle visibility of Waybar
 riverctl map normal $mod B spawn 'pkill -SIGUSR1 waybar'
 
 # Move, resize and toggle floating windows with mouse buttons
 riverctl map-pointer normal $mod BTN_LEFT move-view
 riverctl map-pointer normal $mod BTN_RIGHT resize-view
-#riverctl map-pointer normal $mod BTN_MIDDLE toggle-float
 
 # Spawn various apps
 riverctl map normal $mod Return spawn foot
@@ -141,8 +137,8 @@ all_tags=$(((1 << 6) - 1))
 riverctl map normal $mod 0 set-focused-tags $all_tags
 
 # Set background and border color
-riverctl border-color-focused 0xC9CBFF
-riverctl border-color-unfocused 0x6E6C7E
+riverctl border-color-focused 0x9CABCA
+riverctl border-color-unfocused 0x54546D
 riverctl border-width 2
 
 # Passthrough mode, useful when running virtual machines
