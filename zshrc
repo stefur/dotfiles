@@ -53,9 +53,6 @@ alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
 
-# Electron app flags for wayland
-alias Discord="Discord --enable-features=UseOzonePlatform --ozone-platform=wayland"
-
 # adding flags
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
