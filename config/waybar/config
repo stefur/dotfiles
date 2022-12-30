@@ -1,6 +1,7 @@
 {
   "modules-left": [
     "river/tags",
+    "river/mode",
     "river/window"
   ],
   "modules-right": [
@@ -101,6 +102,9 @@
   "river/window": {
     "tooltip": false,
     "max-length": 75
+  },
+  "river/mode": {
+    "format": "| {} |"
   },
   "bluetooth": {
     "format": "",

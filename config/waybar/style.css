@@ -58,14 +58,18 @@ button:hover {
 #bluetooth,
 #idle_inhibitor,
 #tray,
-#network {
-    color: #C9CBFF;
+#network,
+#mode {
+    color: #9CABCA;
     padding: 8px;
 }
 
-#clock,
-#custom-spotify,
 #window {
+    color: #D9E0EE;
+}
+
+#clock,
+#custom-spotify {
     color: #D9E0EE;
     padding: 8px;
 }

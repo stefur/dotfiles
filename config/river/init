@@ -145,6 +145,11 @@ riverctl border-color-focused 0xC9CBFF
 riverctl border-color-unfocused 0x6E6C7E
 riverctl border-width 2
 
+# Passthrough mode, useful when running virtual machines
+riverctl declare-mode passthrough
+riverctl map normal $mod+$ctrl+$alt Return enter-mode passthrough
+riverctl map passthrough $mod+$ctrl+$alt Backspace enter-mode normal
+
 # Set repeat rate
 riverctl set-repeat 50 300
 
