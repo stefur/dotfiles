@@ -37,7 +37,7 @@ kanshi &
 
 # Lock the screen after 300 seconds, turn off the screen after another 300
 # and also lock the screen before sleep.
-swayidle -w	timeout 300 "lock.sh" timeout 600 "wlopm --off '*'" timeout 900 "loginctl suspend" resume "wlopm --on '*'" before-sleep "lock.sh" &
+swayidle -w	timeout 300 "lock.sh" timeout 600 "wlopm --off '*'" resume "wlopm --on '*'" timeout 900 "loginctl suspend" resume "wlopm --on '*'" before-sleep "lock.sh" &
 
 # Polkit agent
 /usr/libexec/polkit-gnome-authentication-agent-1 &
