@@ -1,7 +1,8 @@
 #!/bin/sh
-status=$(connmanctl state | awk '{ if ($1 == "State") { print $3 } }')
-if [ $status = "idle" ]; then 
-    connmanctl enable wifi
+name=$(iwctl adapter list | awk 'FNR == 5 { print $2 }')
+status=$(iwctl adapter list | awk 'FNR == 5 { print $3 }')
+if [ $status = "off" ]; then 
+    iwctl adapter $name set-property Powered on
 else
-    connmanctl disable wifi
+    iwctl adapter $name set-property Powered off
 fi

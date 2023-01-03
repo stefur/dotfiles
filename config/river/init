@@ -153,7 +153,7 @@ riverctl set-repeat 50 300
 riverctl float-filter-add app-id newsboat
 riverctl float-filter-add app-id pavucontrol
 riverctl float-filter-add app-id bluetoothctl
-riverctl float-filter-add app-id connmanctl
+riverctl float-filter-add app-id iwctl
 riverctl float-filter-add title "Execute File" # Running appimages from pcmanfm
 riverctl float-filter-add title "Open Folder" # VS Code dialog
 riverctl float-filter-add title "Open File" # VS Code dialog

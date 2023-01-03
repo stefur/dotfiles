@@ -66,7 +66,7 @@
     "format-wifi": "直",
     "format-linked": "直  No IP",
     "format-disconnected": "睊",
-    "on-click": "foot --app-id='connmanctl' connmanctl",
+    "on-click": "foot --app-id='iwctl' iwctl",
     "on-click-right": "wifi.sh",
     "on-click-middle": "pkexec wg-quick up wg0",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}"
