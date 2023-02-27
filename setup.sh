@@ -33,5 +33,6 @@ for file in ${dotfiles}/local/bin/*; do
     ln -s ${file} ~/.local/bin/
 done
 
-# Install the kernel hook
-sudo -p "We need sudo to install the vkpurge kernel hook. Password:" ln -s ${dotfiles}/etc/kernel.d/post-install/60-vkpurge /etc/kernel.d/post-install
+# Install the kernel hook & battery level check
+sudo -p "We need sudo to install the vkpurge kernel hook and create the battery check via cron. Password:" ln -s ${dotfiles}/etc/kernel.d/post-install/60-vkpurge /etc/kernel.d/post-install
+echo "* * * * * root /home/stefur/.local/bin/check-battery.sh" | sudo tee /etc/cron.d/suspend-if-low-bat
