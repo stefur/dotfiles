@@ -25,6 +25,7 @@ syncthing &
 # Pipewire for audio
 pipewire &
 pipewire-pulse &
+wireplumber &
 
 # Notifications daemon
 mako &
