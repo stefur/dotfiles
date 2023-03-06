@@ -29,6 +29,7 @@
     "tooltip": false
   },
   "battery": {
+    "bat": "BAT0",
     "format": "{icon}",
     "format-charging": "{icon}",
     "format-plugged": "{icon}",
