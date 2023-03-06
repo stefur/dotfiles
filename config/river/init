@@ -172,7 +172,7 @@ done
 riverctl focus-follows-cursor normal
 
 # ...and warp it if another output is focused
-riverctl set-cursor-warp on-output-changed
+riverctl set-cursor-warp on-output-change
 
 # xcursor theme
 riverctl xcursor-theme Adwaita
