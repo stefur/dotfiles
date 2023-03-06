@@ -1,3 +1,7 @@
+profile desktop {
+    output DP-1 mode 2560x1440 position 2560,0
+    output DP-2 mode 2560x1440 position 0,0
+}
 profile home {
     output eDP-1 disable
     output "Goldstar Company Ltd LG ULTRAGEAR 009NTDV41234" mode 2560x1440
