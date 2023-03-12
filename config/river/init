@@ -150,15 +150,15 @@ riverctl map passthrough $mod+$ctrl+$alt Backspace enter-mode normal
 riverctl set-repeat 50 300
 
 # Set app-ids of views which should float
-riverctl float-filter-add app-id newsboat
-riverctl float-filter-add app-id pavucontrol
-riverctl float-filter-add app-id bluetoothctl
-riverctl float-filter-add app-id iwctl
-riverctl float-filter-add title "Execute File" # Running appimages from pcmanfm
-riverctl float-filter-add title "Open Folder" # VS Code dialog
-riverctl float-filter-add title "Open File" # VS Code dialog
-riverctl float-filter-add title "Save As" # VS Code dialog
-riverctl float-filter-add title "Paradox Launcher" # Game launcher for CK3
+riverctl rule-add float -app-id 'newsboat'
+riverctl rule-add float -app-id 'pavucontrol'
+riverctl rule-add float -app-id 'bluetoothctl'
+riverctl rule-add float -app-id 'iwctl'
+riverctl rule-add float -title 'Execute File' # Running appimages from pcmanfm
+riverctl rule-add float -title 'Open Folder' # VS Code dialog
+riverctl rule-add float -title 'Open File' # VS Code dialog
+riverctl rule-add float -title 'Save As' # VS Code dialog
+riverctl rule-add float -title 'Paradox Launcher' # Game launcher for CK3
 
 # Set touchpad by grabbing the event
 for pad in $(riverctl list-inputs | grep -i touchpad )
