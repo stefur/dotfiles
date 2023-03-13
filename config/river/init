@@ -160,6 +160,10 @@ riverctl rule-add float -title 'Open File' # VS Code dialog
 riverctl rule-add float -title 'Save As' # VS Code dialog
 riverctl rule-add float -title 'Paradox Launcher' # Game launcher for CK3
 
+# river defaulting to CSD if the client does not support xdg-decoration
+# For now this goes for applications such as Firefox, therefore forcing server side decoration
+riverctl rule-add ssd
+
 # Set touchpad by grabbing the event
 for pad in $(riverctl list-inputs | grep -i touchpad )
 do
