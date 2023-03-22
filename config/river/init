@@ -58,6 +58,9 @@ riverctl map normal $mod+$alt Return set-view-tags ${scratch_tag}
 riverctl map normal $mod F toggle-fullscreen
 riverctl map normal $mod+$shift F toggle-float
 
+# Pin a window
+riverctl map normal $mod A set-view-tags ${all_but_scratch_tag}
+
 # Notification callbacks
 riverctl map normal $mod+$shift B spawn 'callbacks.sh battery'
 riverctl map normal $mod+$shift D spawn 'callbacks.sh date'
