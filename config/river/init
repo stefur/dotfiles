@@ -40,6 +40,7 @@ riverctl map normal $mod+$ctrl Return spawn pcmanfm
 riverctl map normal $mod M spawn mount.sh
 riverctl map normal $mod P spawn pass.sh
 riverctl map normal $mod E spawn emojis.sh
+riverctl map normal $mod K spawn 'kanshictl reload'
 
 # Lock the screen
 riverctl map normal $mod L spawn lock.sh
@@ -99,8 +100,8 @@ riverctl map normal $mod Period focus-output next
 riverctl map normal $mod Comma focus-output previous
 
 # Send view to output
-riverctl map normal $mod+$shift Comma send-to-output previous
-riverctl map normal $mod+$shift Period send-to-output next
+riverctl map normal $mod+$shift Comma send-to-output -current-tags previous
+riverctl map normal $mod+$shift Period send-to-output -current-tags next
 
 # Adjust the ratio and reset it
 riverctl map normal $mod+$alt Left send-layout-cmd rivertile 'main-ratio -0.05'
