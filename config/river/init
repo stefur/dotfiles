@@ -61,6 +61,22 @@ riverctl map normal $mod+$shift F toggle-float
 # Pin a window
 riverctl map normal $mod A set-view-tags ${all_but_scratch_tag}
 
+# Snap, move and resize floating windows
+riverctl map normal $alt Up snap up
+riverctl map normal $alt Down snap down
+riverctl map normal $alt Right snap right
+riverctl map normal $alt Left snap left
+
+riverctl map normal $alt+$shift Up move up 20
+riverctl map normal $alt+$shift Down move down 20
+riverctl map normal $alt+$shift Right move right 20
+riverctl map normal $alt+$shift Left move left 20
+
+riverctl map normal $alt+$ctrl Up resize vertical 20
+riverctl map normal $alt+$ctrl Down resize vertical -20
+riverctl map normal $alt+$ctrl Right resize horizontal 20
+riverctl map normal $alt+$ctrl Left resize horizontal -20
+
 # Notification callbacks
 riverctl map normal $mod+$shift B spawn 'callbacks.sh battery'
 riverctl map normal $mod+$shift D spawn 'callbacks.sh date'
