@@ -22,7 +22,7 @@
   },
   "custom/spotify": {
     "interval": "once",
-    "exec": "cat /tmp/lystra_output.txt",
+    "exec": "cat /tmp/lystra-output",
     "signal": 8,
     "on-click": "callbacks.sh playpause",
     "on-click-right": "callbacks.sh nextsong",
