@@ -32,8 +32,8 @@
     "bat": "BAT0",
     "format": "{icon}",
     "format-charging": "{icon}\udb85\udc0b",
-    "format-plugged": "{icon}\uf492",
-    "format-not-charging": "{icon}\uf492",
+    "format-plugged": "{icon}\udb81\udea5",
+    "format-not-charging": "{icon}\udb81\udea5",
     "format-icons": [
       "\udb84\udccd",
       "\udb80\udc7a",
