@@ -63,10 +63,16 @@
     "tooltip-format": "{ipaddr}"
   },
   "network#wifi": {
-    "format": "",
-    "format-wifi": "直",
-    "format-linked": "直  No IP",
-    "format-disconnected": "睊",
+    "format-icons": [
+      "\udb82\udd2f",
+      "\udb82\udd1f",
+      "\udb82\udd22",
+      "\udb82\udd25",
+      "\udb82\udd28"
+    ],
+    "format-wifi": "{icon}",
+    "format-linked": "\udb82\udd2d",
+    "format-disconnected": "\udb82\udd2e",
     "on-click": "foot --app-id='iwctl' iwctl",
     "on-click-right": "wifi.sh",
     "on-click-middle": "pkexec wg-quick up wg0",
@@ -108,10 +114,10 @@
     "format": "| {} |"
   },
   "bluetooth": {
-    "format": "",
-    "format-off": "",
-    "format-connected": "",
-    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+    "format": "\udb80\udcaf",
+    "format-off": "\udb80\udcb2",
+    "format-connected": "\udb80\udcb1",
+    "format-connected-battery": "\udb80\udcb1 {device_alias} {device_battery_percentage}%",
     "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
