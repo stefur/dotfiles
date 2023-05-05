@@ -31,20 +31,21 @@
   "battery": {
     "bat": "BAT0",
     "format": "{icon}",
-    "format-charging": "{icon}",
-    "format-plugged": "{icon}",
-    "format-not-charging": "{icon}",
+    "format-charging": "{icon}\udb85\udc0b",
+    "format-plugged": "{icon}\uf492",
+    "format-not-charging": "{icon}\uf492",
     "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "\udb84\udccd",
+      "\udb80\udc7a",
+      "\udb80\udc7b",
+      "\udb80\udc7c",
+      "\udb80\udc7d",
+      "\udb80\udc7e",
+      "\udb80\udc7f",
+      "\udb80\udc80",
+      "\udb80\udc81",
+      "\udb80\udc82",
+      "\udb80\udc79"
     ],
     "interval": 120,
     "states": {
@@ -55,9 +56,8 @@
   },
   "network#vpn": {
     "interface": "wg0",
-    "format": "嬨",
-    "format-wifi": "嬨",
-    "format-linked": "嬨  No IP",
+    "format": "\udb80\udf3e",
+    "format-linked": "\udb82\udcee",
     "format-disconnected": "",
     "on-click": "pkexec wg-quick down wg0",
     "tooltip-format": "{ipaddr}"
@@ -85,19 +85,19 @@
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
-      "activated": "",
-      "deactivated": "﯈"
+      "activated": "\udb80\udd76",
+      "deactivated": "\udb81\udeca"
     }
   },
   "pulseaudio": {
     "format": "{icon}",
     "tooltip-format": "{volume}%",
-    "format-muted": "婢",
+    "format-muted": "\udb81\udd81",
     "format-icons": {
       "default": [
-        "",
-        "",
-        ""
+        "\udb81\udd7f",
+        "\udb81\udd80",
+        "\udb81\udd7e"
       ]
     },
     "on-click": "pactl set-sink-mute 0 toggle",
