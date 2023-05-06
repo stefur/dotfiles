@@ -92,7 +92,7 @@
   "pulseaudio": {
     "format": "{icon}",
     "tooltip-format": "{volume}%",
-    "format-muted": "\udb81\udd81",
+    "format-muted": "\udb83\ude08",
     "format-icons": {
       "default": [
         "\udb81\udd7f",
