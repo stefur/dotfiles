@@ -71,6 +71,7 @@
       "\udb82\udd28"
     ],
     "format-wifi": "{icon}",
+    "interface": "wl*",
     "format-linked": "\udb82\udd2d",
     "format-disconnected": "\udb82\udd2e",
     "on-click": "foot --app-id='iwctl' iwctl",
