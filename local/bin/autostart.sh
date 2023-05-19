@@ -17,7 +17,7 @@ convert ~/wallpapers/$file -blur 16x8 /tmp/lock_img.jpg &
 waybar &
 
 # And my Spotify listener :)
-lystra --playing "󰐊 " --paused "󰏤 " --playbackcolor "#9CABCA" --mediaplayer "spotify" &
+lystra --playing "󰐊 " --paused "󰏤 " --playbackcolor "#9CABCA" --mediaplayer "spotify" --autotoggle &
 
 # And then syncthing to keep files all up to date
 syncthing &
