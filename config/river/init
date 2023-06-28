@@ -180,6 +180,14 @@ riverctl rule-add float -title 'Open File' # VS Code dialog
 riverctl rule-add float -title 'Save As' # VS Code dialog
 riverctl rule-add float -title 'Paradox Launcher' # Game launcher for CK3
 
+# Tag rules for new views
+# Tags = 1, 2, 4, 8, 16, 32
+riverctl rule-add tag -app-id 'Firefox' 1
+riverctl rule-add tag -app-id 'Signal' 4
+riverctl rule-add tag -app-id 'discord' 4
+riverctl rule-add tag -app-id 'Spotify' 8
+riverctl rule-add tag -app-id 'steam' 16
+
 # river defaulting to CSD if the client does not support xdg-decoration
 # For now this goes for applications such as Firefox, therefore forcing server side decoration
 riverctl rule-add ssd
