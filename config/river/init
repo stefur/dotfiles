@@ -157,7 +157,7 @@ all_tags=$(((1 << 6) - 1))
 riverctl map normal $mod 0 set-focused-tags $all_tags
 
 # Set background and border color
-riverctl border-color-focused 0x9CABCA
+riverctl border-color-focused 0xB6AFC9
 riverctl border-color-unfocused 0x54546D
 riverctl border-width 3
 

@@ -8,7 +8,7 @@
 }
 
 window#waybar {
-    background-color: rgba(22, 22, 29, 1);
+    background-color: rgba(29, 29, 22, 1);
     /* #16161D */
 }
 
@@ -33,11 +33,11 @@ button:hover {
 
 #tags button.focused {
     color: #16161D;
-    background-color: #9CABCA;
+    background-color: #B6AFC9;
 }
 
 #tags button.occupied {
-    color: #9CABCA;
+    color: #B6AFC9;
 }
 
 #tags button.urgent {
@@ -50,7 +50,7 @@ button:hover {
 
 #tags button.focused.occupied {
     color: #16161D;
-    background-color: #9CABCA;
+    background-color: #B6AFC9;
 }
 
 #pulseaudio,
@@ -60,7 +60,7 @@ button:hover {
 #tray,
 #network,
 #mode {
-    color: #9CABCA;
+    color: #B6AFC9;
     padding: 8px;
 }
 
