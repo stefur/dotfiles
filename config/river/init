@@ -159,7 +159,7 @@ riverctl map normal $mod 0 set-focused-tags $all_tags
 # Set background and border color
 riverctl border-color-focused 0x9CABCA
 riverctl border-color-unfocused 0x54546D
-riverctl border-width 2
+riverctl border-width 3
 
 # Passthrough mode, useful when running virtual machines
 riverctl declare-mode passthrough
@@ -212,4 +212,4 @@ riverctl xcursor-theme Adwaita
 # Set and exec into the default layout generator, rivertile.
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
-rivertile -outer-padding 0 -view-padding 0 -main-ratio 0.5 &
+rivertile -outer-padding 5 -view-padding 5 -main-ratio 0.5 &
