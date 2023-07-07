@@ -1,10 +1,13 @@
 font=FiraMono Nerd Font 10
 
-background-color=#16161D
-text-color=#D9E0EE
+background-color=#9CABCA
+text-color=#16161D
 border-color=#9CABCA
 
-border-size=1
+border-size=0
+border-radius=15
+
+padding=10
 
 default-timeout=3000
-margin=8
+margin=10
