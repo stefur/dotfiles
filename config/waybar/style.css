@@ -9,7 +9,7 @@
 
 window#waybar {
     background-color: rgba(29, 29, 22, 1);
-    /* #16161D */
+    /* #1d1d16 */
 }
 
 /* https://github.com/Alexays/Waybar/issues/1763 */
@@ -27,12 +27,12 @@ button:hover {
 #tags button {
     padding: 6px;
     color: #54546D;
-    border: #16161D;
+    border: #1d1d16;
     transition-property: none;
 }
 
 #tags button.focused {
-    color: #16161D;
+    color: #1d1d16;
     background-color: #B6AFC9;
 }
 
@@ -49,7 +49,7 @@ button:hover {
 }
 
 #tags button.focused.occupied {
-    color: #16161D;
+    color: #1d1d16;
     background-color: #B6AFC9;
 }
 
