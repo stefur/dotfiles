@@ -3,7 +3,6 @@ export XKB_DEFAULT_LAYOUT=se
 export ELM_DISPLAY=wl
 export QT_QPA_PLATFORM=xcb
 export MOZ_ENABLE_WAYLAND=1
-export EDITOR="vim"
 export TERM="foot"
 
 # Path

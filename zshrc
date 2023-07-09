@@ -30,6 +30,10 @@ bindkey "\e[F"  end-of-line
 # alt-bs
 bindkey "\e\d"  undo
 
+# Bind page up/down to insert nothing because I'm clumsy
+bindkey -s "^[[5~" ""
+bindkey -s "^[[6~" ""
+
 # Navigation
 alias ..='cd ..'
 alias ...='cd ../..'
