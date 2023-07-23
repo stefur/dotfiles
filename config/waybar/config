@@ -21,9 +21,9 @@
     "interval": 60
   },
   "custom/spotify": {
-    "interval": "once",
-    "exec": "cat /tmp/lystra-output",
-    "signal": 8,
+    "format": "{}",
+    "exec": "lystra --playing '󰐊 ' --paused '󰏤 ' --playbackcolor '#9CABCA' --mediaplayer 'spotify' --autotoggle",
+    "return-type": "json",
     "on-click": "callbacks.sh playpause",
     "on-click-right": "callbacks.sh nextsong",
     "tooltip": false
