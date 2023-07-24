@@ -21,9 +21,14 @@
     "interval": 60
   },
   "custom/spotify": {
-    "format": "{}",
-    "exec": "lystra --playing '󰐊 ' --paused '󰏤 ' --playbackcolor '#9CABCA' --mediaplayer 'spotify' --autotoggle",
+    "format": "<span color='#9CABCA'>{icon}</span> {}",
+    "format-icons": {
+      "Playing": "󰐊",
+      "Paused": "󰏤"
+    },
+    "exec": "lystra --mediaplayer 'spotify' --autotoggle",
     "return-type": "json",
+    "max-length": 45,
     "on-click": "callbacks.sh playpause",
     "on-click-right": "callbacks.sh nextsong",
     "tooltip": false
