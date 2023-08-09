@@ -53,8 +53,8 @@ exit
 😪 sleepy face face tired rest nap
 🤤 drooling face face
 😴 sleeping face face tired sleepy night zzz
-😷 face with medical mask face sick ill disease
-🤒 face with thermometer sick temperature thermometer cold fever
+😷 face with medical mask face sick ill disease covid
+🤒 face with thermometer sick temperature thermometer cold fever covid
 🤕 face with head bandage injured clumsy bandage hurt
 🤢 nauseated face face vomit gross green sick throw up ill
 🤮 face vomiting face sick
@@ -77,10 +77,10 @@ exit
 😯 hushed face face woo shh
 😲 astonished face face xox surprised poisoned
 😳 flushed face face blush shy flattered
-🥺 pleading face face begging mercy
+🥺 pleading face face begging mercy cry tears sad grievance
 😦 frowning face with open mouth face aw what
 😧 anguished face face stunned nervous
-😨 fearful face face scared terrified nervous oops huh
+😨 fearful face face scared terrified nervous
 😰 anxious face with sweat face nervous sweat
 😥 sad but relieved face face phew sweat nervous
 😢 crying face face tears sad depressed upset :'(
@@ -144,7 +144,7 @@ exit
 🤍 white heart pure
 💯 hundred points score perfect numbers century exam quiz test pass hundred
 💢 anger symbol angry mad
-💥 collision bomb explode explosion collision blown
+💥 collision bomb explode explosion blown
 💫 dizzy star sparkle shoot magic
 💦 sweat droplets water drip oops
 💨 dashing away wind air fast shoo fart smoke puff
@@ -185,7 +185,7 @@ exit
 👐 open hands fingers butterfly hands open
 🤲 palms up together hands gesture cupped prayer
 🤝 handshake agreement shake
-🙏 folded hands please hope wish namaste highfive pray
+🙏 folded hands please hope wish namaste highfive pray thank you thanks appreciate
 ✍️ writing hand lower left ballpoint pen stationery write compose
 💅 nail polish beauty manicure finger fashion nail
 🤳 selfie camera phone
@@ -203,12 +203,12 @@ exit
 👀 eyes look watch stalk peek see
 👁️ eye face look see watch stare
 👅 tongue mouth playful
-👄 mouth mouth kiss
+👄 mouth kiss
 👶 baby child boy girl toddler
 🧒 child gender-neutral young
 👦 boy man male guy teenager
 👧 girl female woman teenager
-🧑 person gender-neutral person
+🧑 person gender-neutral
 👱 person blond hair hairstyle
 👨 man mustache father dad guy classy sir moustache
 🧔 man beard person bewhiskered
@@ -311,7 +311,7 @@ exit
 👮 police officer cop
 👮‍♂️ man police officer man police law legal enforcement arrest 911
 👮‍♀️ woman police officer woman police law legal enforcement arrest 911 female
-🕵️ detective human spy detective
+🕵️ detective human spy
 🕵️‍♂️ man detective crime
 🕵️‍♀️ woman detective human spy detective female woman
 💂 guard protect
@@ -422,12 +422,12 @@ exit
 🏋️ person lifting weights sports training exercise
 🏋️‍♂️ man lifting weights sport
 🏋️‍♀️ woman lifting weights sports training exercise woman female
-🚴 person biking sport move
-🚴‍♂️ man biking sports bike exercise hipster
-🚴‍♀️ woman biking sports bike exercise hipster woman female
-🚵 person mountain biking sport move
-🚵‍♂️ man mountain biking transportation sports human race bike
-🚵‍♀️ woman mountain biking transportation sports human race bike woman female
+🚴 person biking bicycle bike cyclist sport move
+🚴‍♂️ man biking bicycle bike cyclist sports exercise hipster
+🚴‍♀️ woman biking bicycle bike cyclist sports exercise hipster woman female
+🚵 person mountain biking bicycle bike cyclist sport move
+🚵‍♂️ man mountain biking bicycle bike cyclist transportation sports human race
+🚵‍♀️ woman mountain biking bicycle bike cyclist transportation sports human race woman female
 🤸 person cartwheeling sport gymnastic
 🤸‍♂️ man cartwheeling gymnastics
 🤸‍♀️ woman cartwheeling gymnastics
@@ -542,7 +542,7 @@ exit
 🦇 bat animal nature blind vampire
 🐻 bear animal nature wild
 🐨 koala animal nature
-🐼 panda animal nature panda
+🐼 panda animal nature
 🦥 sloth animal
 🦦 otter animal
 🦨 skunk animal
@@ -589,18 +589,18 @@ exit
 🐜 ant animal insect nature bug
 🐝 honeybee animal insect nature bug spring honey
 🐞 lady beetle animal insect nature ladybug
-🦗 cricket animal cricket chirp
+🦗 cricket animal chirp
 🕷️ spider animal arachnid
 🕸️ spider web animal insect arachnid silk
 🦂 scorpion animal arachnid
 🦟 mosquito animal nature insect malaria
-🦠 microbe amoeba bacteria germs virus
+🦠 microbe amoeba bacteria germs virus covid
 💐 bouquet flowers nature spring
 🌸 cherry blossom nature plant spring flower
 💮 white flower japanese spring
 🏵️ rosette flower decoration military
 🌹 rose flowers valentines love spring
-🥀 wilted flower plant nature flower
+🥀 wilted flower plant nature flower rose
 🌺 hibiscus plant vegetable flowers beach
 🌻 sunflower nature plant fall
 🌼 blossom nature flowers yellow
@@ -650,51 +650,51 @@ exit
 🌰 chestnut food squirrel
 🍞 bread food wheat breakfast toast
 🥐 croissant food bread french
-🥖 baguette bread food bread french
-🥨 pretzel food bread twisted
-🥯 bagel food bread bakery schmear
-🥞 pancakes food breakfast flapjacks hotcakes
-🧇 waffle food breakfast
-🧀 cheese wedge food chadder
+🥖 baguette bread food bread french france bakery
+🥨 pretzel food bread twisted germany bakery
+🥯 bagel food bread bakery schmear jewish bakery
+🥞 pancakes food breakfast flapjacks hotcakes brunch
+🧇 waffle food breakfast brunch
+🧀 cheese wedge food chadder swiss
 🍖 meat on bone good food drumstick
 🍗 poultry leg food meat drumstick bird chicken turkey
 🥩 cut of meat food cow meat cut chop lambchop porkchop
-🥓 bacon food breakfast pork pig meat
+🥓 bacon food breakfast pork pig meat brunch
 🍔 hamburger meat fast food beef cheeseburger mcdonalds burger king
-🍟 french fries chips snack fast food
-🍕 pizza food party
-🌭 hot dog food frankfurter
-🥪 sandwich food lunch bread
+🍟 french fries chips snack fast food potato
+🍕 pizza food party italy
+🌭 hot dog food frankfurter america
+🥪 sandwich food lunch bread toast bakery
 🌮 taco food mexican
 🌯 burrito food mexican
-🥙 stuffed flatbread food flatbread stuffed gyro
-🧆 falafel food
+🥙 stuffed flatbread food flatbread stuffed gyro mediterranean
+🧆 falafel food mediterranean
 🥚 egg food chicken breakfast
-🍳 cooking food breakfast kitchen egg
-🥘 shallow pan of food food cooking casserole paella
-🍲 pot of food food meat soup
+🍳 cooking food breakfast kitchen egg skillet
+🥘 shallow pan of food food cooking casserole paella skillet
+🍲 pot of food food meat soup hot pot
 🥣 bowl with spoon food breakfast cereal oatmeal porridge
-🥗 green salad food healthy lettuce
-🍿 popcorn food movie theater films snack
+🥗 green salad food healthy lettuce vegetable
+🍿 popcorn food movie theater films snack drama
 🧈 butter food cook
 🧂 salt condiment shaker
-🥫 canned food food soup
-🍱 bento box food japanese box
-🍘 rice cracker food japanese
+🥫 canned food food soup tomatoes
+🍱 bento box food japanese box lunch
+🍘 rice cracker food japanese snack
 🍙 rice ball food japanese
-🍚 cooked rice food china asian
+🍚 cooked rice food asian
 🍛 curry rice food spicy hot indian
-🍜 steaming bowl food japanese noodle chopsticks
-🍝 spaghetti food italian noodle
-🍠 roasted sweet potato food nature
+🍜 steaming bowl food japanese noodle chopsticks ramen
+🍝 spaghetti food italian pasta noodle
+🍠 roasted sweet potato food nature plant
 🍢 oden food japanese
 🍣 sushi food fish japanese rice
 🍤 fried shrimp food animal appetizer summer
 🍥 fish cake with swirl food japan sea beach narutomaki pink swirl kamaboko surimi ramen
-🥮 moon cake food autumn
+🥮 moon cake food autumn dessert
 🍡 dango food dessert sweet japanese barbecue meat
-🥟 dumpling food empanada pierogi potsticker
-🥠 fortune cookie food prophecy
+🥟 dumpling food empanada pierogi potsticker gyoza
+🥠 fortune cookie food prophecy dessert
 🥡 takeout box food leftovers
 🦀 crab animal crustacean
 🦞 lobster animal nature bisque claws seafood
@@ -717,7 +717,7 @@ exit
 🍯 honey pot bees sweet kitchen
 🍼 baby bottle food container milk
 🥛 glass of milk beverage drink cow
-☕ hot beverage beverage caffeine latte espresso coffee
+☕ hot beverage beverage caffeine latte espresso coffee mug
 🍵 teacup without handle drink bowl breakfast green british
 🍶 sake wine drink drunk beverage japanese alcohol booze
 🍾 bottle with popping cork drink wine bottle celebration
@@ -834,7 +834,7 @@ exit
 🦽 manual wheelchair accessibility
 🦼 motorized wheelchair accessibility
 🛺 auto rickshaw move transportation
-🚲 bicycle sports bicycle exercise hipster
+🚲 bicycle bike sports exercise hipster
 🛴 kick scooter vehicle kick razor
 🛹 skateboard board
 🚏 bus stop transportation wait
@@ -877,30 +877,30 @@ exit
 ⏱️ stopwatch time deadline
 ⏲️ timer clock alarm
 🕰️ mantelpiece clock time
-🕛 twelve o clock time noon midnight midday late early schedule
-🕧 twelve thirty time late early schedule
-🕐 one o clock time late early schedule
-🕜 one thirty time late early schedule
-🕑 two o clock time late early schedule
-🕝 two thirty time late early schedule
-🕒 three o clock time late early schedule
-🕞 three thirty time late early schedule
-🕓 four o clock time late early schedule
-🕟 four thirty time late early schedule
-🕔 five o clock time late early schedule
-🕠 five thirty time late early schedule
-🕕 six o clock time late early schedule dawn dusk
-🕡 six thirty time late early schedule
-🕖 seven o clock time late early schedule
-🕢 seven thirty time late early schedule
-🕗 eight o clock time late early schedule
-🕣 eight thirty time late early schedule
-🕘 nine o clock time late early schedule
-🕤 nine thirty time late early schedule
-🕙 ten o clock time late early schedule
-🕥 ten thirty time late early schedule
-🕚 eleven o clock time late early schedule
-🕦 eleven thirty time late early schedule
+🕛 twelve o clock 12 00:00 0000 12:00 1200 time noon midnight midday late early schedule
+🕧 twelve thirty 00:30 0030 12:30 1230 time late early schedule
+🕐 one o clock 1 1:00 100 13:00 1300 time late early schedule
+🕜 one thirty 1:30 130 13:30 1330 time late early schedule
+🕑 two o clock 2 2:00 200 14:00 1400 time late early schedule
+🕝 two thirty 2:30 230 14:30 1430 time late early schedule
+🕒 three o clock 3 3:00 300 15:00 1500 time late early schedule
+🕞 three thirty 3:30 330 15:30 1530 time late early schedule
+🕓 four o clock 4 4:00 400 16:00 1600 time late early schedule
+🕟 four thirty 4:30 430 16:30 1630 time late early schedule
+🕔 five o clock 5 5:00 500 17:00 1700 time late early schedule
+🕠 five thirty 5:30 530 17:30 1730 time late early schedule
+🕕 six o clock 6 6:00 600 18:00 1800 time late early schedule dawn dusk
+🕡 six thirty 6:30 630 18:30 1830 time late early schedule
+🕖 seven o clock 7 7:00 700 19:00 1900 time late early schedule
+🕢 seven thirty 7:30 730 19:30 1930 time late early schedule
+🕗 eight o clock 8 8:00 800 20:00 2000 time late early schedule
+🕣 eight thirty 8:30 830 20:30 2030 time late early schedule
+🕘 nine o clock 9 9:00 900 21:00 2100 time late early schedule
+🕤 nine thirty 9:30 930 21:30 2130 time late early schedule
+🕙 ten o clock 10 10:00 1000 22:00 2200 time late early schedule
+🕥 ten thirty 10:30 1030 22:30 2230 time late early schedule
+🕚 eleven o clock 11 11:00 1100 23:00 2300 time late early schedule
+🕦 eleven thirty 11:30 1130 23:30 2330 time late early schedule
 🌑 new moon nature twilight planet space night evening sleep
 🌒 waxing crescent moon nature twilight planet space night evening sleep
 🌓 first quarter moon nature twilight planet space night evening sleep
@@ -957,8 +957,8 @@ exit
 🎈 balloon party celebration birthday circus
 🎉 party popper party congratulations birthday magic circus celebration tada
 🎊 confetti ball festival party birthday circus
-🎋 tanabata tree plant nature branch summer
-🎍 pine decoration plant nature vegetable panda pine decoration
+🎋 tanabata tree plant nature branch summer bamboo wish star festival tanzaku
+🎍 pine decoration japanese plant nature vegetable panda new years bamboo
 🎎 japanese dolls japanese toy kimono
 🎏 carp streamer fish japanese koinobori carp banner
 🎐 wind chime nature ding spring bell
@@ -1051,7 +1051,7 @@ exit
 👜 handbag fashion accessory accessories shopping
 👝 clutch bag bag accessories shopping
 🛍️ shopping bags mall buy purchase
-🎒 backpack student education bag backpack
+🎒 backpack student education bag
 👞 man s shoe fashion male
 👟 running shoe shoes sports sneakers
 🥾 hiking boot backpacking camping hiking
@@ -1097,13 +1097,13 @@ exit
 🥁 drum music instrument drumsticks snare
 📱 mobile phone technology apple gadgets dial
 📲 mobile phone with arrow iphone incoming
-☎️ telephone technology communication dial telephone
+☎️ telephone technology communication dial
 📞 telephone receiver technology communication dial
 📟 pager bbcall oldschool 90s
 📠 fax machine communication technology
 🔋 battery power energy sustain
 🔌 electric plug charger power
-💻 laptop technology laptop screen display monitor
+💻 laptop technology screen display monitor
 🖥️ desktop computer technology computing screen
 🖨️ printer paper ink
 ⌨️ keyboard technology computer type input text
@@ -1118,7 +1118,7 @@ exit
 🎞️ film frames movie
 📽️ film projector video tape record movie
 🎬 clapper board movie film record
-📺 television technology program oldschool show television
+📺 television technology program oldschool show
 📷 camera gadgets photography
 📸 camera with flash photography gadgets
 📹 video camera film record
@@ -1182,7 +1182,7 @@ exit
 📁 file folder documents business office
 📂 open file folder documents load
 🗂️ card index dividers organizing business stationery
-📅 calendar calendar schedule
+📅 calendar schedule
 📆 tear off calendar schedule date planning
 🗒️ spiral notepad memo stationery
 🗓️ spiral calendar date schedule planning
@@ -1214,7 +1214,7 @@ exit
 🛠️ hammer and wrench tools build create
 🗡️ dagger weapon
 ⚔️ crossed swords weapon
-🔫 pistol violence weapon pistol revolver
+🔫 pistol violence weapon revolver
 🏹 bow and arrow sports
 🛡️ shield protection security
 🔧 wrench tools diy ikea fix maintainer
@@ -1256,10 +1256,10 @@ exit
 🧽 sponge absorbing cleaning porous
 🧯 fire extinguisher quench
 🛒 shopping cart trolley
-🚬 cigarette kills tobacco cigarette joint smoke
+🚬 cigarette kills tobacco joint smoke
 ⚰️ coffin vampire dead die death rip graveyard cemetery casket funeral box
 ⚱️ funeral urn dead die death rip ashes
-🗿 moai rock easter island moai
+🗿 moai rock easter island
 🏧 atm sign money sales cash blue-square payment bank
 🚮 litter in bin sign blue-square sign human info
 🚰 potable water blue-square liquid restroom cleaning faucet
@@ -1277,7 +1277,7 @@ exit
 🚸 children crossing school warning danger sign driving yellow-diamond
 ⛔ no entry limit security privacy bad denied stop circle
 🚫 prohibited forbid stop limit denied disallow circle
-🚳 no bicycles cyclist prohibited circle
+🚳 no bicycles no bikes bicycle bike cyclist prohibited circle
 🚭 no smoking cigarette blue-square smell smoke
 🚯 no littering trash bin garbage circle
 🚱 non potable water drink faucet tap circle
@@ -1326,7 +1326,7 @@ exit
 ♌ leo sign purple-square zodiac astrology
 ♍ virgo sign zodiac purple-square astrology
 ♎ libra sign purple-square zodiac astrology
-♏ scorpio sign zodiac purple-square astrology scorpio
+♏ scorpio sign zodiac purple-square astrology
 ♐ sagittarius sign zodiac purple-square astrology
 ♑ capricorn sign zodiac purple-square astrology
 ♒ aquarius sign purple-square zodiac astrology
@@ -1406,7 +1406,7 @@ exit
 🔟 keycap 10 numbers 10 blue-square
 🔠 input latin uppercase alphabet words blue-square
 🔡 input latin lowercase blue-square alphabet
-🔢 input numbers numbers blue-square
+🔢 input numbers numbers blue-square 1234 1 2 3 4
 🔣 input symbols blue-square music note ampersand percent glyphs characters
 🔤 input latin letters blue-square alphabet
 🅰️ a button red-square alphabet letter
@@ -1532,7 +1532,7 @@ exit
 🇨🇰 flag cook islands cook islands flag nation country banner cook islands
 🇨🇱 flag chile flag nation country banner chile
 🇨🇲 flag cameroon cm flag nation country banner cameroon
-🇨🇳 flag china china chinese prc flag country nation banner china
+🇨🇳 flag china china chinese prc flag country nation banner
 🇨🇴 flag colombia co flag nation country banner colombia
 🇨🇵 flag clipperton island
 🇨🇷 flag costa rica costa rica flag nation country banner costa rica
@@ -1555,15 +1555,15 @@ exit
 🇪🇬 flag egypt eg flag nation country banner egypt
 🇪🇭 flag western sahara western sahara flag nation country banner western sahara
 🇪🇷 flag eritrea er flag nation country banner eritrea
-🇪🇸 flag spain spain flag nation country banner spain
+🇪🇸 flag spain spain flag nation country banner
 🇪🇹 flag ethiopia et flag nation country banner ethiopia
 🇪🇺 flag european union european union flag banner
 🇫🇮 flag finland fi flag nation country banner finland
 🇫🇯 flag fiji fj flag nation country banner fiji
 🇫🇰 flag falkland islands falkland islands malvinas flag nation country banner falkland islands
-🇫🇲 flag micronesia micronesia federated states flag nation country banner micronesia
+🇫🇲 flag micronesia micronesia federated states flag nation country banner
 🇫🇴 flag faroe islands faroe islands flag nation country banner faroe islands
-🇫🇷 flag france banner flag nation france french country france
+🇫🇷 flag france banner flag nation france french country
 🇬🇦 flag gabon ga flag nation country banner gabon
 🇬🇧 flag united kingdom united kingdom great britain northern ireland flag nation country banner british UK english england union jack united kingdom
 🇬🇩 flag grenada gd flag nation country banner grenada
@@ -1597,13 +1597,13 @@ exit
 🇮🇳 flag india in flag nation country banner india
 🇮🇴 flag british indian ocean territory british indian ocean territory flag nation country banner british indian ocean territory
 🇮🇶 flag iraq iq flag nation country banner iraq
-🇮🇷 flag iran iran islamic republic flag nation country banner iran
+🇮🇷 flag iran iran islamic republic flag nation country banner
 🇮🇸 flag iceland is flag nation country banner iceland
-🇮🇹 flag italy italy flag nation country banner italy
+🇮🇹 flag italy italy flag nation country banner
 🇯🇪 flag jersey je flag nation country banner jersey
 🇯🇲 flag jamaica jm flag nation country banner jamaica
 🇯🇴 flag jordan jo flag nation country banner jordan
-🇯🇵 flag japan japanese nation flag country banner japan
+🇯🇵 flag japan japanese nation flag country banner japan jp ja
 🇰🇪 flag kenya ke flag nation country banner kenya
 🇰🇬 flag kyrgyzstan kg flag nation country banner kyrgyzstan
 🇰🇭 flag cambodia kh flag nation country banner cambodia
@@ -1628,7 +1628,7 @@ exit
 🇱🇾 flag libya ly flag nation country banner libya
 🇲🇦 flag morocco ma flag nation country banner morocco
 🇲🇨 flag monaco mc flag nation country banner monaco
-🇲🇩 flag moldova moldova republic flag nation country banner moldova
+🇲🇩 flag moldova moldova republic flag nation country banner
 🇲🇪 flag montenegro me flag nation country banner montenegro
 🇲🇫 flag st martin
 🇲🇬 flag madagascar mg flag nation country banner madagascar
@@ -1715,11 +1715,11 @@ exit
 🇹🇲 flag turkmenistan flag nation country banner turkmenistan
 🇹🇳 flag tunisia tn flag nation country banner tunisia
 🇹🇴 flag tonga to flag nation country banner tonga
-🇹🇷 flag turkey turkey flag nation country banner turkey
+🇹🇷 flag turkey turkey flag nation country banner
 🇹🇹 flag trinidad tobago trinidad tobago flag nation country banner trinidad tobago
 🇹🇻 flag tuvalu flag nation country banner tuvalu
 🇹🇼 flag taiwan tw flag nation country banner taiwan
-🇹🇿 flag tanzania tanzania united republic flag nation country banner tanzania
+🇹🇿 flag tanzania tanzania united republic flag nation country banner
 🇺🇦 flag ukraine ua flag nation country banner ukraine
 🇺🇬 flag uganda ug flag nation country banner uganda
 🇺🇲 flag u s outlying islands
@@ -1776,7 +1776,7 @@ exit
 🫐 blueberries fruit
 🫒 olive fruit
 🫑 bell pepper fruit plant
-🫓 flatbread flour food
+🫓 flatbread flour food bakery
 🫔 tamale food masa
 🫕 fondue cheese pot food
 🫖 teapot drink hot
@@ -1821,11 +1821,11 @@ exit
 🧔‍♀️ woman beard facial hair
 🫠 melting face hot heat
 🫢 face with open eyes and hand over mouth silence secret shock surprise
-🫣 face with peeking eye scared frightening embarrassing
+🫣 face with peeking eye scared frightening embarrassing shy
 🫡 saluting face respect salute
 🫥 dotted line face invisible lonely isolation depression
 🫤 face with diagonal mouth skeptic confuse frustrated indifferent
-🥹 face holding back tears touched gratitude
+🥹 face holding back tears touched gratitude cry
 🫱 rightwards hand palm offer
 🫲 leftwards hand palm offer
 🫳 palm down hand palm drop
@@ -1856,3 +1856,24 @@ exit
 🫧 bubbles soap fun carbonation sparkling
 🪪 identification card document
 🟰 heavy equals sign math
+🫨 shaking face dizzy shock blurry earthquake
+🩷 pink heart valentines
+🩵 light blue heart ice baby blue
+🩶 grey heart silver monochrome
+🫷 leftwards pushing hand highfive pressing stop
+🫸 rightwards pushing hand highfive pressing stop
+🫎 moose shrek canada sweden sven cool
+🫏 donkey eeyore mule
+🪽 wing angel birds flying
+🐦‍⬛ black bird crow
+🪿 goose silly jemima goosebumps
+🪼 jellyfish sting tentacles
+🪻 hyacinth flower lavender
+🫚 ginger root spice yellow cooking gingerbread
+🫛 pea pod cozy green
+🪭 folding hand fan flamenco hot
+🪮 hair pick afro comb
+🪇 maracas music instrument percussion
+🪈 flute bamboo music instrument pied piper
+🪯 khanda Sikhism religion
+🛜 wireless wifi internet contactless signal
