@@ -13,8 +13,10 @@ swaybg -m fill -i ~/wallpapers/$file &
 # Blur the wallpaper and put a copy in tmp location for lock screen usage
 convert ~/wallpapers/$file -blur 16x8 /tmp/lock_img.jpg &
 
-# Start the bar...
-waybar &
+# Start the bar unless it's qtile...
+if ! pgrep "qtile" ; then
+    waybar &
+fi
 
 # And then syncthing to keep files all up to date
 syncthing &

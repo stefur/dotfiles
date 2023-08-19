@@ -12,5 +12,11 @@ fi
 
 # Start river
 if [[ -z $WAYLAND_DISPLAY && $(tty) = "/dev/tty1" ]]; then
-    exec dbus-run-session river
+  echo "Select compositor"
+  select compositor in "river" "qtile"; do
+      case $compositor in
+          river ) exec dbus-run-session river;;
+          qtile ) exec dbus-run-session qtile start -b wayland;;
+      esac
+  done
 fi
