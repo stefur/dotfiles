@@ -46,14 +46,14 @@ riverctl map normal $mod K spawn 'kanshictl reload'
 riverctl map normal $mod L spawn lock.sh
 
 # Take a screenshot
-riverctl map normal $mod+$shift P spawn 'grim -g "$(slurp)" - | wl-copy'
+riverctl map normal $mod+$shift P spawn screenshot.sh
 
 # Close a window
 riverctl map normal $mod+$shift C close
 
 # Toggle and set scratchtag
 riverctl map normal $mod+$shift Return toggle-focused-tags ${scratch_tag}
-riverctl map normal $mod+$alt Return set-view-tags ${scratch_tag}
+riverctl map normal $mod+$shift S set-view-tags ${scratch_tag}
 
 # Fullscreen and float toggles
 riverctl map normal $mod F toggle-fullscreen
