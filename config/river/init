@@ -88,8 +88,8 @@ riverctl map normal $mod Q spawn 'callbacks.sh mic'
 riverctl map normal $mod Tab focus-previous-tags
 
 # Cycle between the tags using riverwm-utils
-riverctl map normal $mod+$ctrl Right spawn 'cycle-focused-tags next 6'
-riverctl map normal $mod+$ctrl Left spawn 'cycle-focused-tags previous 6'
+riverctl map normal $mod+$ctrl Right spawn 'flow cycle-tags next 6'
+riverctl map normal $mod+$ctrl Left spawn 'flow cycle-tags previous 6'
 
 # Reload the config
 riverctl map normal $mod+$shift R spawn $HOME/.config/river/init
