@@ -148,7 +148,7 @@ riverctl map normal $mod+$shift M spawn 'pactl set-sink-mute 0 toggle'
 # Set up 6 tags and create appropriate keybinds for them"""
 for i in $(seq 1 6); do
     tag=$((1 << ($i - 1)))
-    riverctl map normal $mod $i set-focused-tags $tag
+    riverctl map normal $mod $i spawn "flow toggle-tags ${tag}"
     riverctl map normal $mod+$shift $i set-view-tags $tag
 done
 
