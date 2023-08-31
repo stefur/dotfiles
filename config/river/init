@@ -85,7 +85,7 @@ riverctl map normal $mod+$shift W spawn 'callbacks.sh wifi'
 riverctl map normal $mod Q spawn 'callbacks.sh mic'
 
 # Jump between tags
-riverctl map normal $mod Tab focus-previous-tags
+riverctl map normal $mod Tab spawn 'flow focus-urgent-tags'
 
 # Cycle between the tags using riverwm-utils
 riverctl map normal $mod+$ctrl Right spawn 'flow cycle-tags next 6'
