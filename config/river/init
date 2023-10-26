@@ -170,23 +170,23 @@ riverctl map passthrough $mod+$ctrl+$alt Backspace enter-mode normal
 riverctl set-repeat 50 300
 
 # Set app-ids of views which should float
-riverctl rule-add float -app-id 'newsboat'
-riverctl rule-add float -app-id 'pavucontrol'
-riverctl rule-add float -app-id 'bluetoothctl'
-riverctl rule-add float -app-id 'iwctl'
-riverctl rule-add float -title 'Execute File' # Running appimages from pcmanfm
-riverctl rule-add float -title 'Open Folder' # VS Code dialog
-riverctl rule-add float -title 'Open File' # VS Code dialog
-riverctl rule-add float -title 'Save As' # VS Code dialog
-riverctl rule-add float -title 'Paradox Launcher' # Game launcher for CK3
+riverctl rule-add -app-id 'newsboat' float
+riverctl rule-add -app-id 'pavucontrol' float
+riverctl rule-add -app-id 'bluetoothctl' float
+riverctl rule-add -app-id 'iwctl' float
+riverctl rule-add -title 'Execute File' float # Running appimages from pcmanfm
+riverctl rule-add -title 'Open Folder' float # VS Code dialog
+riverctl rule-add -title 'Open File' float # VS Code dialog
+riverctl rule-add -title 'Save As' float # VS Code dialog
+riverctl rule-add -title 'Paradox Launcher' float # Game launcher for CK3
 
 # Tag rules for new views
 # Tags = 1, 2, 4, 8, 16, 32
-riverctl rule-add tag -app-id 'Firefox' 1
-riverctl rule-add tag -app-id 'Signal' 4
-riverctl rule-add tag -app-id 'discord' 4
-riverctl rule-add tag -app-id 'Spotify' 8
-riverctl rule-add tag -app-id 'steam' 16
+riverctl rule-add -app-id 'Firefox' tag 1
+riverctl rule-add -app-id 'Signal' tag 4
+riverctl rule-add -app-id 'discord' tag 4
+riverctl rule-add -app-id 'Spotify' tag 8
+riverctl rule-add -app-id 'steam' tag 16
 
 # river defaulting to CSD if the client does not support xdg-decoration
 # For now this goes for applications such as Firefox, therefore forcing server side decoration
