@@ -183,11 +183,11 @@ riverctl rule-add -title 'Paradox Launcher' float # Game launcher for CK3
 
 # Tag rules for new views
 # Tags = 1, 2, 4, 8, 16, 32
-riverctl rule-add -app-id 'Firefox' tag 1
-riverctl rule-add -app-id 'Signal' tag 4
-riverctl rule-add -app-id 'discord' tag 4
-riverctl rule-add -app-id 'Spotify' tag 8
-riverctl rule-add -app-id 'steam' tag 16
+riverctl rule-add -app-id 'Firefox' tags 1
+riverctl rule-add -app-id 'Signal' tags 4
+riverctl rule-add -app-id 'discord' tags 4
+riverctl rule-add -app-id 'Spotify' tags 8
+riverctl rule-add -app-id 'steam' tags 16
 
 # river defaulting to CSD if the client does not support xdg-decoration
 # For now this goes for applications such as Firefox, therefore forcing server side decoration
