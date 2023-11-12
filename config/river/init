@@ -67,7 +67,7 @@ riverctl map normal $mod F toggle-fullscreen
 riverctl map normal $mod+$shift F toggle-float
 
 # Pin a window
-riverctl map normal $mod A set-view-tags ${all_tags}
+riverctl map normal $mod A set-view-tags $all_tags
 
 # Snap, move and resize floating windows
 riverctl map normal $alt Up snap up
@@ -94,9 +94,9 @@ riverctl map normal $mod Q spawn 'callbacks.sh mic'
 # Jump between tags
 riverctl map normal $mod Tab spawn 'flow focus-urgent-tags'
 
-# Cycle between the tags using riverwm-utils
-riverctl map normal $mod+$ctrl Right spawn 'flow cycle-tags next 6'
-riverctl map normal $mod+$ctrl Left spawn 'flow cycle-tags previous 6'
+# Cycle between the tags
+riverctl map normal $mod+$ctrl Right spawn "flow cycle-tags next ${n_tags}"
+riverctl map normal $mod+$ctrl Left spawn "flow cycle-tags previous ${n_tags}"
 
 # Reload the config
 riverctl map normal $mod+$shift R spawn $HOME/.config/river/init
