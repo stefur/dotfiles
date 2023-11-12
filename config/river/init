@@ -11,15 +11,26 @@ alt="Mod1"
 shift="Shift"
 ctrl="Control"
 
+# Number of tags
+n_tags=6
+
+# Set up tags and create appropriate keybinds for them
+tags=()
+for i in $(seq 1 $n_tags); do
+    tag=$((1 << ($i - 1)))
+    tags+=(tag)
+    riverctl map normal $mod $i spawn "flow toggle-tags ${tag}"
+    riverctl map normal $mod+$shift $i set-view-tags $tag
+    riverctl map normal $mod+$ctrl $i toggle-focused-tags $tag
+done
+
+# Get all tags
+all_tags=$(((1 << $n_tags) - 1))
+riverctl map normal $mod 0 set-focused-tags $all_tags
+
+
 # Command to control Spotify
 music_ctrl="dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player."
-
-scratch_tag=$((1 << 20))
-
-# Set spawn tagmask to ensure new windows don't have the scratchpad tag unless
-# explicitly set.
-all_but_scratch_tag=$(( ((1 << 32) - 1) ^ $scratch_tag ))
-riverctl spawn-tagmask ${all_but_scratch_tag}
 
 # Toggle visibility of Waybar
 riverctl map normal $mod B spawn 'pkill -SIGUSR1 waybar'
@@ -51,16 +62,12 @@ riverctl map normal $mod+$shift P spawn screenshot.sh
 # Close a window
 riverctl map normal $mod+$shift C close
 
-# Toggle and set scratchtag
-riverctl map normal $mod+$shift Return toggle-focused-tags ${scratch_tag}
-riverctl map normal $mod+$shift S set-view-tags ${scratch_tag}
-
 # Fullscreen and float toggles
 riverctl map normal $mod F toggle-fullscreen
 riverctl map normal $mod+$shift F toggle-float
 
 # Pin a window
-riverctl map normal $mod A set-view-tags ${all_but_scratch_tag}
+riverctl map normal $mod A set-view-tags ${all_tags}
 
 # Snap, move and resize floating windows
 riverctl map normal $alt Up snap up
@@ -145,18 +152,6 @@ riverctl map normal None XF86AudioMute spawn 'pactl set-sink-mute 0 toggle'
 # Extra mute button in case of no mediakeys
 riverctl map normal $mod+$shift M spawn 'pactl set-sink-mute 0 toggle'
 
-# Set up 6 tags and create appropriate keybinds for them"""
-for i in $(seq 1 6); do
-    tag=$((1 << ($i - 1)))
-    riverctl map normal $mod $i spawn "flow toggle-tags ${tag}"
-    riverctl map normal $mod+$shift $i set-view-tags $tag
-    riverctl map normal $mod+$ctrl $i toggle-focused-tags $tag
-done
-
-# Get all tags
-all_tags=$(((1 << 6) - 1))
-riverctl map normal $mod 0 set-focused-tags $all_tags
-
 # Set background and border color
 riverctl border-color-focused 0xB6AFC9
 riverctl border-color-unfocused 0x54546D
@@ -182,12 +177,11 @@ riverctl rule-add -title 'Save As' float # VS Code dialog
 riverctl rule-add -title 'Paradox Launcher' float # Game launcher for CK3
 
 # Tag rules for new views
-# Tags = 1, 2, 4, 8, 16, 32
-riverctl rule-add -app-id 'Firefox' tags 1
-riverctl rule-add -app-id 'Signal' tags 4
-riverctl rule-add -app-id 'discord' tags 4
-riverctl rule-add -app-id 'Spotify' tags 8
-riverctl rule-add -app-id 'steam' tags 16
+riverctl rule-add -app-id 'Firefox' tags $tags[0]
+riverctl rule-add -app-id 'Signal' tags $tags[2]
+riverctl rule-add -app-id 'discord' tags $tags[2]
+riverctl rule-add -app-id 'Spotify' tags $tags[3]
+riverctl rule-add -app-id 'steam' tags $tags[4]
 
 # river defaulting to CSD if the client does not support xdg-decoration
 # For now this goes for applications such as Firefox, therefore forcing server side decoration
