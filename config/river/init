@@ -18,7 +18,7 @@ n_tags=6
 tags=()
 for i in $(seq 1 $n_tags); do
     tag=$((1 << ($i - 1)))
-    tags+=(tag)
+    tags+=($tag)
     riverctl map normal $mod $i spawn "flow toggle-tags ${tag}"
     riverctl map normal $mod+$shift $i set-view-tags $tag
     riverctl map normal $mod+$ctrl $i toggle-focused-tags $tag
@@ -176,11 +176,11 @@ riverctl rule-add -title 'Save As' float # VS Code dialog
 riverctl rule-add -title 'Paradox Launcher' float # Game launcher for CK3
 
 # Tag rules for new views
-riverctl rule-add -app-id 'Firefox' tags $tags[0]
-riverctl rule-add -app-id 'Signal' tags $tags[2]
-riverctl rule-add -app-id 'discord' tags $tags[2]
-riverctl rule-add -app-id 'Spotify' tags $tags[3]
-riverctl rule-add -app-id 'steam' tags $tags[4]
+riverctl rule-add -app-id 'Firefox' tags ${tags[0]}
+riverctl rule-add -app-id 'Signal' tags ${tags[2]}
+riverctl rule-add -app-id 'discord' tags ${tags[2]}
+riverctl rule-add -app-id 'Spotify' tags ${tags[3]}
+riverctl rule-add -app-id 'steam' tags ${tags[4]}
 
 # river defaulting to CSD if the client does not support xdg-decoration
 # For now this goes for applications such as Firefox, therefore forcing server side decoration
