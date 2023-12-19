@@ -95,7 +95,10 @@ riverctl map normal $mod Tab spawn 'flow focus-urgent-tags'
 
 # Cycle between the tags
 riverctl map normal $mod+$ctrl Right spawn "flow cycle-tags next ${n_tags}"
+riverctl map normal $mod+$ctrl+$alt Right spawn "flow cycle-tags next ${n_tags} -o"
+
 riverctl map normal $mod+$ctrl Left spawn "flow cycle-tags previous ${n_tags}"
+riverctl map normal $mod+$ctrl+$alt Left spawn "flow cycle-tags previous ${n_tags} -o"
 
 # Reload the config
 riverctl map normal $mod+$shift R spawn $HOME/.config/river/init
