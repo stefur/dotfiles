@@ -49,6 +49,7 @@ riverctl map normal $mod N spawn 'foot --app-id="newsboat" newsboat -C=~/.config
 riverctl map normal $mod+$ctrl Return spawn pcmanfm
 riverctl map normal $mod M spawn mount.sh
 riverctl map normal $mod P spawn pass.sh
+riverctl map normal $mod O spawn otp.sh
 riverctl map normal $mod E spawn emojis.sh
 riverctl map normal $mod K spawn 'kanshictl reload'
 
