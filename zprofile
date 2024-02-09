@@ -5,6 +5,9 @@ export QT_QPA_PLATFORM=xcb
 export MOZ_ENABLE_WAYLAND=1
 export TERM="foot"
 
+# Rye
+. "$HOME/.rye/env"
+
 # Path
 if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
