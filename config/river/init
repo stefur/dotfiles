@@ -1,9 +1,33 @@
 #!/bin/bash
 
-# Autostart, but only if we're not reloading
-if ! pgrep -x "rivertile" > /dev/null; then
-    autostart.sh
-fi
+# Startup
+
+# Set the brightness since it defaults to 100% on boot
+brightnessctl set 20%
+
+waybar &
+wlsunset -l 59.3:17.8 &
+
+# Pick a random wallpaper
+file=$(ls ~/wallpapers | shuf -n 1)
+swaybg -m fill -i ~/wallpapers/$file &
+
+# Blur the wallpaper and put a copy in tmp location for lock screen usage
+convert ~/wallpapers/$file -blur 16x8 /tmp/lock_img.jpg &
+
+syncthing &
+pipewire &
+mako &
+kanshi &
+
+# Lock the screen after 300 seconds, turn off the screen after another 300
+# and also lock the screen before sleep.
+swayidle -w	timeout 300 "lock.sh" timeout 600 "wlopm --off '*'" resume "wlopm --on '*'" timeout 900 "loginctl suspend" before-sleep "lock.sh" &
+
+/usr/libexec/polkit-gnome-authentication-agent-1 &
+
+# Fix for flatpak
+dbus-update-activation-environment DISPLAY
 
 # Modkeys
 mod="Mod4"
@@ -101,9 +125,6 @@ riverctl map normal $mod+$ctrl+$alt Right spawn "flow cycle-tags next ${n_tags} 
 riverctl map normal $mod+$ctrl Left spawn "flow cycle-tags previous ${n_tags}"
 riverctl map normal $mod+$ctrl+$alt Left spawn "flow cycle-tags previous ${n_tags} -o"
 
-# Reload the config
-riverctl map normal $mod+$shift R spawn $HOME/.config/river/init
-
 # Exit River
 riverctl map normal $mod+$shift Q exit
 
@@ -189,6 +210,9 @@ riverctl rule-add -app-id 'steam' tags ${tags[4]}
 # river defaulting to CSD if the client does not support xdg-decoration
 # For now this goes for applications such as Firefox, therefore forcing server side decoration
 riverctl rule-add ssd
+
+# Float views that should float
+riverctl rule-add -app-id float float
 
 # Set touchpad by grabbing the event
 for pad in $(riverctl list-inputs | grep -i touchpad )

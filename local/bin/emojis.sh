@@ -39,12 +39,12 @@ exit
 🤫 shushing face face quiet shhh
 🤔 thinking face face hmmm think consider
 🤐 zipper mouth face face sealed zipper secret
-🤨 face with raised eyebrow face distrust scepticism disapproval disbelief surprise
+🤨 face with raised eyebrow face distrust scepticism disapproval disbelief surprise suspicious
 😐 neutral face indifference meh :| neutral
 😑 expressionless face face indifferent - - meh deadpan
-😶 face without mouth face hellokitty
+😶 face without mouth face
 😏 smirking face face smile mean prank smug sarcasm
-😒 unamused face indifference bored straight face serious sarcasm unimpressed skeptical dubious side eye
+😒 unamused face indifference bored straight face serious sarcasm unimpressed skeptical dubious ugh side eye
 🙄 face with rolling eyes face eyeroll frustrated
 😬 grimacing face face grimace teeth
 🤥 lying face face lie pinocchio
@@ -84,7 +84,7 @@ exit
 😰 anxious face with sweat face nervous sweat
 😥 sad but relieved face face phew sweat nervous
 😢 crying face face tears sad depressed upset :'(
-😭 loudly crying face face cry tears sad upset depressed
+😭 loudly crying face sobbing face cry tears sad upset depressed
 😱 face screaming in fear face munch scared omg
 😖 confounded face face confused sick unwell oops :S
 😣 persevering face face sick no upset oops
@@ -93,13 +93,13 @@ exit
 😩 weary face face tired sleepy sad frustrated upset
 😫 tired face sick whine upset frustrated
 🥱 yawning face tired sleepy
-😤 face with steam from nose face gas phew proud pride
+😤 face with steam from nose face gas phew proud pride triumph
 😡 pouting face angry mad hate despise
 😠 angry face mad face annoyed frustrated
 🤬 face with symbols on mouth face swearing cursing cussing profanity expletive
 😈 smiling face with horns devil horns
 👿 angry face with horns devil angry horns
-💀 skull dead skeleton creepy death
+💀 skull dead skeleton creepy death dead
 ☠️ skull and crossbones poison danger deadly scary death pirate evil
 💩 pile of poo hankey shitface fail turd shit
 🤡 clown face face
@@ -142,7 +142,7 @@ exit
 🤎 brown heart coffee
 🖤 black heart evil
 🤍 white heart pure
-💯 hundred points score perfect numbers century exam quiz test pass hundred
+💯 hundred points score perfect numbers century exam quiz test pass hundred 100
 💢 anger symbol angry mad
 💥 collision bomb explode explosion blown
 💫 dizzy star sparkle shoot magic
@@ -156,7 +156,7 @@ exit
 🗯️ right anger bubble caption speech thinking mad
 💭 thought balloon bubble cloud speech thinking dream
 💤 zzz sleepy tired dream
-👋 waving hand hands gesture goodbye solong farewell hello hi palm
+👋 waving hand wave hands gesture goodbye solong farewell hello hi palm
 🤚 raised back of hand fingers raised backhand
 🖐️ hand with fingers splayed hand fingers palm
 ✋ raised hand fingers stop highfive palm ban
@@ -187,7 +187,7 @@ exit
 🤝 handshake agreement shake
 🙏 folded hands please hope wish namaste highfive pray thank you thanks appreciate
 ✍️ writing hand lower left ballpoint pen stationery write compose
-💅 nail polish beauty manicure finger fashion nail
+💅 nail polish nail care beauty manicure finger fashion nail slay
 🤳 selfie camera phone
 💪 flexed biceps arm flex hand summer strong biceps
 🦾 mechanical arm accessibility
@@ -680,14 +680,14 @@ exit
 🧂 salt condiment shaker
 🥫 canned food food soup tomatoes
 🍱 bento box food japanese box lunch
-🍘 rice cracker food japanese snack
-🍙 rice ball food japanese
+🍘 rice cracker food japanese snack senbei
+🍙 rice ball food japanese onigiri omusubi
 🍚 cooked rice food asian
 🍛 curry rice food spicy hot indian
 🍜 steaming bowl food japanese noodle chopsticks ramen
 🍝 spaghetti food italian pasta noodle
 🍠 roasted sweet potato food nature plant
-🍢 oden food japanese
+🍢 oden skewer food japanese
 🍣 sushi food fish japanese rice
 🍤 fried shrimp food animal appetizer summer
 🍥 fish cake with swirl food japan sea beach narutomaki pink swirl kamaboko surimi ramen
@@ -713,7 +713,7 @@ exit
 🍫 chocolate bar food snack dessert sweet
 🍬 candy snack dessert sweet lolly
 🍭 lollipop food snack candy sweet
-🍮 custard dessert food
+🍮 custard dessert food pudding flan
 🍯 honey pot bees sweet kitchen
 🍼 baby bottle food container milk
 🥛 glass of milk beverage drink cow
@@ -738,9 +738,9 @@ exit
 🥄 spoon cutlery kitchen tableware
 🔪 kitchen knife knife blade cutlery kitchen weapon
 🏺 amphora vase jar
-🌍 globe showing europe africa globe world international
-🌎 globe showing americas globe world USA international
-🌏 globe showing asia australia globe world east international
+🌍 globe showing europe africa globe world earth international
+🌎 globe showing americas globe world USA earth international
+🌏 globe showing asia australia globe world east earth international
 🌐 globe with meridians earth international world internet interweb i18n
 🗺️ world map location direction
 🗾 map of japan nation country japanese asia
@@ -940,7 +940,7 @@ exit
 ☂️ umbrella weather spring
 ☔ umbrella with rain drops rainy weather spring
 ⛱️ umbrella on ground weather summer
-⚡ high voltage thunder weather lightning bolt fast
+⚡ high voltage thunder weather lightning bolt fast zap
 ❄️ snowflake winter season cold weather christmas xmas
 ☃️ snowman winter season cold weather christmas xmas frozen
 ⛄ snowman without snow winter season cold weather christmas xmas frozen without snow
@@ -1393,19 +1393,19 @@ exit
 ™️ trade mark trademark brand law legal
 #️⃣ keycap  symbol blue-square twitter
 *️⃣ keycap  star keycap
-0️⃣ keycap 0 0 numbers blue-square null
-1️⃣ keycap 1 blue-square numbers 1
-2️⃣ keycap 2 numbers 2 prime blue-square
-3️⃣ keycap 3 3 numbers prime blue-square
-4️⃣ keycap 4 4 numbers blue-square
-5️⃣ keycap 5 5 numbers blue-square prime
-6️⃣ keycap 6 6 numbers blue-square
-7️⃣ keycap 7 7 numbers blue-square prime
-8️⃣ keycap 8 8 blue-square numbers
-9️⃣ keycap 9 blue-square numbers 9
-🔟 keycap 10 numbers 10 blue-square
-🔠 input latin uppercase alphabet words blue-square
-🔡 input latin lowercase blue-square alphabet
+0️⃣ keycap 0 0 numbers blue-square null zero
+1️⃣ keycap 1 blue-square numbers 1 one
+2️⃣ keycap 2 numbers 2 prime blue-square two
+3️⃣ keycap 3 3 numbers prime blue-square three
+4️⃣ keycap 4 4 numbers blue-square four
+5️⃣ keycap 5 5 numbers blue-square prime five
+6️⃣ keycap 6 6 numbers blue-square six
+7️⃣ keycap 7 7 numbers blue-square prime seven
+8️⃣ keycap 8 8 blue-square numbers eight
+9️⃣ keycap 9 blue-square numbers 9 nine
+🔟 keycap 10 numbers 10 blue-square ten
+🔠 input latin uppercase alphabet words letters uppercase blue-square
+🔡 input latin lowercase blue-square letters lowercase alphabet
 🔢 input numbers numbers blue-square 1234 1 2 3 4
 🔣 input symbols blue-square music note ampersand percent glyphs characters
 🔤 input latin letters blue-square alphabet
@@ -1482,7 +1482,7 @@ exit
 🎌 crossed flags japanese nation country border
 🏴 black flag pirate
 🏳️ white flag losing loser lost surrender give up fail
-🏳️‍🌈 rainbow flag flag rainbow pride gay lgbt glbt queer homosexual lesbian bisexual transgender
+🏳️‍🌈 rainbow flag flag rainbow pride gay lgbt queer homosexual lesbian bisexual
 🏴‍☠️ pirate flag skull crossbones flag banner
 🇦🇨 flag ascension island
 🇦🇩 flag andorra ad flag nation country banner andorra
@@ -1810,8 +1810,8 @@ exit
 🪥 toothbrush hygiene dental
 🪦 headstone death rip grave
 🪧 placard announcement
-⚧️ transgender symbol lgbtq
-🏳️‍⚧️ transgender flag lgbtq
+⚧️ transgender symbol transgender lgbtq
+🏳️‍⚧️ transgender flag transgender flag pride lgbtq
 😶‍🌫️ face in clouds shower steam dream
 😮‍💨 face exhaling relieve relief tired sigh
 😵‍💫 face with spiral eyes sick ill confused nauseous nausea

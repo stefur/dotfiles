@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Symlink everything, create foldes if necessary
+# Symlink everything, create folders if necessary
 
 dotfiles=$(pwd)
 
