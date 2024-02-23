@@ -24,6 +24,7 @@ kanshi &
 # and also lock the screen before sleep.
 swayidle -w	timeout 300 "lock.sh" timeout 600 "wlopm --off '*'" resume "wlopm --on '*'" timeout 900 "loginctl suspend" before-sleep "lock.sh" &
 
+gpg-connect-agent & 
 /usr/libexec/polkit-gnome-authentication-agent-1 &
 
 # Fix for flatpak
