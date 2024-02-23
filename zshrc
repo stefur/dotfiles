@@ -34,6 +34,23 @@ bindkey "\e\d"  undo
 bindkey -s "^[[5~" ""
 bindkey -s "^[[6~" ""
 
+
+# Ctrl + R to open a search minibuffer, Ctrl + E to accept result
+history-incremental-search-{back,for}ward() {
+  local saved_BUFFER=$BUFFER saved_CURSOR=$CURSOR error
+  BUFFER=
+  zle .$WIDGET -- $saved_BUFFER
+  error=$?
+  if (( error )) BUFFER=$saved_BUFFER CURSOR=$saved_CURSOR
+  return error
+}
+zle -N history-incremental-search-backward
+zle -N history-incremental-search-forward
+
+# Up and down to move through history
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+
 alias ls="ls -al --color=auto --hyperlink=auto --group-directories-first -h"
 
 # Colorize grep output (good for log files)
