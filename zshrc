@@ -64,6 +64,12 @@ alias rm="rm -i"
 # human-readable sizes
 alias df="df -h"
 
+# void admin
+alias xu="sudo xbps-install -Svu"
+alias xi="sudo xbps-install -Sv"
+alias xr="sudo xbps-remove -Rv"
+alias xc="sudo xbps-remove -ROov"
+
 # Case-insensitive autocompletion
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 autoload -Uz compinit && compinit
