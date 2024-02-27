@@ -1,0 +1,10 @@
+[user]
+	name = Stefan Furne
+    email = stefan@furne.net
+    signingkey = 2C60427BCF2BBD97
+[core]
+	editor = vim
+[commit]
+	gpgSign = true
+[gpg]
+	program = gpg
