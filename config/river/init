@@ -14,8 +14,9 @@ swaybg -m fill -i ~/wallpapers/$file &
 # Blur the wallpaper and put a copy in tmp location for lock screen usage
 convert ~/wallpapers/$file -blur 16x8 /tmp/lock_img.jpg &
 
+# Daemons
 gpg-agent --daemon &
-syncthing serve --logfile=/tmp/synchting-$(date +%F-%R).log 2>&1 &
+syncthing serve --logfile=/tmp/synchting-$(date +%F-%R).log &
 pipewire &
 mako &
 kanshi &
