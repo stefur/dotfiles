@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Startup
-
 # Set the brightness since it defaults to 100% on boot
 brightnessctl set 20%
 
@@ -15,7 +14,8 @@ swaybg -m fill -i ~/wallpapers/$file &
 # Blur the wallpaper and put a copy in tmp location for lock screen usage
 convert ~/wallpapers/$file -blur 16x8 /tmp/lock_img.jpg &
 
-syncthing &
+gpg-agent --daemon &
+syncthing serve --logfile=/tmp/synchting-$(date +%F-%R).log 2>&1 &
 pipewire &
 mako &
 kanshi &
@@ -24,7 +24,6 @@ kanshi &
 # and also lock the screen before sleep.
 swayidle -w	timeout 300 "lock.sh" timeout 600 "wlopm --off '*'" resume "wlopm --on '*'" timeout 900 "loginctl suspend" before-sleep "lock.sh" &
 
-gpg-connect-agent & 
 /usr/libexec/polkit-gnome-authentication-agent-1 &
 
 # Fix for flatpak

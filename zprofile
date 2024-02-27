@@ -3,6 +3,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 export QT_QPA_PLATFORM=wayland-egl
 export MOZ_ENABLE_WAYLAND=1
 export XDG_SESSION_TYPE=wayland
+export GNUPGHOME=$HOME/.config/gnupg
 
 # Rye
 . "$HOME/.rye/env"
