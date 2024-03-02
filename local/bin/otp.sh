@@ -20,4 +20,4 @@ secret_key=$(echo "$otpauth_string" | sed -n 's/.*secret=\([^&]*\).*/\1/p')
 otp=$(oathtool --base32 --totp --digits=6 "$secret_key")
 
 # Display the generated OTP to the clipboard for 5 seconds
-notify-send "OTP" "$otp" -t 5000
+notify-send "OTP" "${otp:0:3} ${otp:3}" -t 5000
