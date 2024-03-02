@@ -16,7 +16,7 @@ convert ~/wallpapers/$file -blur 16x8 /tmp/lock_img.jpg &
 
 # Daemons
 gpg-agent --daemon &
-syncthing serve --logfile=/tmp/synchting-$(date +%F-%R).log &
+syncthing serve --no-browser --logfile=/tmp/synchting-$(date +%F-%R).log &
 pipewire &
 mako &
 kanshi &
