@@ -1,19 +1,14 @@
 {
+  "layer": "top",
+  "position": "top",
+  "spacing": 15,
   "modules-left": [
     "river/tags",
-    "river/mode",
-    "river/window"
+    "river/mode"
   ],
   "modules-right": [
     "custom/spotify",
-    "tray",
-    "bluetooth",
-    "idle_inhibitor",
-    "battery",
-    "network#vpn",
-    "network#wifi",
-    "pulseaudio",
-    "clock"
+    "group/right"
   ],
   "clock": {
     "format": "{:%H:%M}",
@@ -21,7 +16,7 @@
     "interval": 60
   },
   "custom/spotify": {
-    "format": "<span color='#9CABCA'>{icon}</span> {}",
+    "format": "<span color='#b6afc9'>{icon}</span> {}",
     "format-icons": {
       "Playing": "󰐊",
       "Paused": "󰏤"
@@ -112,12 +107,18 @@
   "river/tags": {
     "num-tags": 6
   },
-  "river/window": {
-    "tooltip": false,
-    "max-length": 75
-  },
-  "river/mode": {
-    "format": "| {} |"
+  "group/right": {
+    "orientation": "horizontal",
+    "modules": [
+      "tray",
+      "bluetooth",
+      "idle_inhibitor",
+      "battery",
+      "network#vpn",
+      "network#wifi",
+      "pulseaudio",
+      "clock"
+    ]
   },
   "bluetooth": {
     "format": "\udb80\udcaf",
