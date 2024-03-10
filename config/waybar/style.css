@@ -10,7 +10,7 @@
     border-radius: 0;
     min-height: 0;
     font-family: "FiraMono Nerd Font", monospace;
-    font-size: 0.978em;
+    font-size: 0.975em;
     font-weight: 700;
 }
 
@@ -24,7 +24,6 @@ window#waybar {
 
 #right {
     background-color: @bg;
-    border-top-left-radius: 0.7em;
     border-bottom-left-radius: 0.7em;
     padding-left: 0.6em;
     padding-right: 0.6em;
@@ -48,7 +47,6 @@ button:hover {
 }
 
 #tags button:last-child {
-    border-top-right-radius: 0.7em;
     border-bottom-right-radius: 0.7em;
     padding-right: 0.75em;
 }
@@ -78,7 +76,6 @@ button:hover {
 #network {
     color: @fg;
     padding: 0.6em;
-    border-radius: 1.02em;
 }
 
 #mode.normal {
@@ -90,7 +87,8 @@ button:hover {
     color: @urgent;
     background-color: @bg;
     padding: 0.6em;
-    border-radius: 0.7em;
+    border-bottom-right-radius: 0.7em;
+    border-bottom-left-radius: 0.7em;
 }
 
 #tray {
@@ -103,7 +101,8 @@ button:hover {
 }
 
 #custom-spotify {
-    border-radius: 0.7em;
+    border-bottom-right-radius: 0.7em;
+    border-bottom-left-radius: 0.7em;
     color: @text;
     padding-left: 1.2em;
     padding-right: 1.2em;
