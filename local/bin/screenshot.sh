@@ -1,2 +1,2 @@
 #!/bin/bash
-grim -g "$(slurp)" - | wl-copy
+grim -g "$(slurp)" - | swappy -f -
