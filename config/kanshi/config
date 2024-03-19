@@ -3,9 +3,14 @@ profile desktop {
     output DP-2 mode 2560x1440 position 2560,0 adaptive_sync on
 }
 profile laptop {
-    output eDP-1 adaptive_sync on
+    output eDP-1 enable adaptive_sync on
 }
 profile multihead {
     output eDP-1 adaptive_sync on
     output HDMI-A-1
+}
+profile dock {
+    output eDP-1 disable
+    output DP-7 2560x1440 position 0,0
+    output DP-8 2560x1440 position 2560,0
 }
