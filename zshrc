@@ -22,18 +22,17 @@ bindkey "\e[1;5D" backward-word
 bindkey "\e[1;5C" forward-word
 # ctrl-bs and ctrl-del
 bindkey "\e[3;5~" kill-word
-bindkey "\C-_"    backward-kill-word
+bindkey "^H" backward-kill-word
 # del, home and end
 bindkey "\e[3~" delete-char
 bindkey "\e[H"  beginning-of-line
 bindkey "\e[F"  end-of-line
-# alt-bs
-bindkey "\e\d"  undo
+# alt-bs to undo
+bindkey "\e\177" undo
 
 # Bind page up/down to insert nothing because I'm clumsy
 bindkey -s "^[[5~" ""
 bindkey -s "^[[6~" ""
-
 
 # Ctrl + R to open a search minibuffer, Ctrl + E to accept result
 history-incremental-search-{back,for}ward() {
@@ -44,12 +43,22 @@ history-incremental-search-{back,for}ward() {
   if (( error )) BUFFER=$saved_BUFFER CURSOR=$saved_CURSOR
   return error
 }
+
+# Ctrl + Up or Down to search through history from beginning of cursor position
+autoload -Uz history-incremental-search-backward
+autoload -Uz history-incremental-search-forward
 zle -N history-incremental-search-backward
 zle -N history-incremental-search-forward
+bindkey "^[[1;5A" history-beginning-search-backward
+bindkey "^[[1;5B" history-beginning-search-forward
 
-# Up and down to move through history
-bindkey "^[[A" history-beginning-search-backward
-bindkey "^[[B" history-beginning-search-forward
+# Regular Up or Down to move through history
+autoload -Uz up-line-or-beginning-search
+autoload -Uz down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search
+bindkey "^[[B" down-line-or-beginning-search
 
 alias ls="ls -al --color=auto --hyperlink=auto --group-directories-first -h"
 
