@@ -78,6 +78,7 @@ alias xu="sudo xbps-install -Svu"
 alias xi="sudo xbps-install -Sv"
 alias xr="sudo xbps-remove -Rv"
 alias xc="sudo xbps-remove -ROov"
+alias xq="xbps-query -Rs"
 
 # Case-insensitive autocompletion
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'

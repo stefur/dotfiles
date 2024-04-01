@@ -16,21 +16,22 @@ swaybg -m fill -i $wallpaper &
 # Blur the wallpaper and put a copy in tmp location for lock screen usage
 convert $wallpaper -blur 16x8 /tmp/lock_img.jpg &
 
-# Daemons
-gpg-agent --daemon &
-syncthing serve --no-browser --logfile=/tmp/synchting-$(date +%F-%R).log &
-pipewire &
 mako &
 kanshi &
 
 # Lock the screen after 300 seconds, turn off the screen after another 300
 # and also lock the screen before sleep.
-swayidle -w	timeout 300 "lock.sh" timeout 600 "wlopm --off '*'" resume "wlopm --on '*'" timeout 900 "loginctl suspend" before-sleep "lock.sh" &
+swayidle -w	timeout 300 "lock.sh" timeout 600 "wlopm --off '*'" resume "wlopm --on '*'" timeout 900 "pkexec zzz" &
 
+# Auth agents
+gpg-agent --daemon &
 /usr/libexec/polkit-gnome-authentication-agent-1 &
 
-# Fix for flatpak
+# Fix for flatpak to properly use portals to follow URL:s etc.
 dbus-update-activation-environment DISPLAY
+
+# Allow local connections to X (specific fix for gparted)
+xhost +local:
 
 # Modkeys
 mod="Mod4"

@@ -28,6 +28,13 @@
     "on-click-right": "callbacks.sh nextsong",
     "tooltip": false
   },
+  "custom/containers": {
+    "format": "{}",
+    "exec": "containers.sh",
+    "interval": 30,
+    "return-type": "json",
+    "tooltip": true
+  },
   "battery": {
     "bat": "BAT0",
     "format": "{icon}",
@@ -111,6 +118,7 @@
     "orientation": "horizontal",
     "modules": [
       "tray",
+      "custom/containers",
       "bluetooth",
       "idle_inhibitor",
       "battery",

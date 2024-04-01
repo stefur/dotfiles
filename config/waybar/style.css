@@ -69,6 +69,7 @@ button:hover {
     color: @bg;
 }
 
+#custom-containers,
 #pulseaudio,
 #battery,
 #bluetooth,
