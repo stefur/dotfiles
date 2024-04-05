@@ -20,8 +20,7 @@ mako &
 kanshi &
 
 # Lock the screen after 300 seconds, turn off the screen after another 300
-# and also lock the screen before sleep.
-swayidle -w	timeout 300 "lock.sh" timeout 600 "wlopm --off '*'" resume "wlopm --on '*'" timeout 900 "pkexec zzz" &
+swayidle timeout 300 "lock.sh" timeout 600 "wlopm --off '*'" resume "wlopm --on '*'" timeout 900 "sudo zzz" &
 
 # Auth agents
 gpg-agent --daemon &

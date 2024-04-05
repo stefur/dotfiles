@@ -45,8 +45,9 @@ done
 # Symlink lock to be picked up by zzz-user-hooks
 ln -s ${dotfiles}/local/bin/lock.sh ~/.onsuspend
 
-# Install the kernel hook & battery level check & create polkit rule to enable zzz for the user so swayidle can call it with pkexec
-
+# Install the kernel hook & battery level check & allow zzz for the user so swayidle can call it
 sudo -p "We need sudo to install the vkpurge kernel hook, enable polkit rule for zzz and create the battery check via cron. Password:" ln -s ${dotfiles}/etc/kernel.d/post-install/60-vkpurge /etc/kernel.d/post-install
-sudo ln -s ${dotfiles}/etc/polkit-1/rules.d/99-zzz.rules /etc/polkit-1/rules.d/99-zzz.rules
+sudo ln -s ${dotfiles}/etc/sudoers.d/99-allow-zzz /etc/sudoers.d
+sudo mkdir -p /etc/elogind/sleep.conf.d
+sudo ln -s ${dotfiles}/etc/elogind/sleep.conf.d/99-no-suspend.conf /etc/elogind/sleep.conf.d
 echo "* * * * * root /home/stefur/.local/bin/check-battery.sh" | sudo tee /etc/cron.d/suspend-if-low-bat
