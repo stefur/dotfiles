@@ -2,6 +2,13 @@
 HISTSIZE=20000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_find_no_dups
+setopt hist_ignore_dups
 
 # Override autosuggest color
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#e7c664,underline"
@@ -82,6 +89,7 @@ alias xq="xbps-query -Rs"
 
 # Case-insensitive autocompletion
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 autoload -Uz compinit && compinit
 
 # My plugins from the .zsh folder
