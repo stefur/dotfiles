@@ -96,3 +96,5 @@ autoload -Uz compinit && compinit
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # This MUST be at the end of this file
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+. "$HOME/.cargo/env"
