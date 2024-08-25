@@ -14,7 +14,7 @@ wallpaper=~/wallpapers/cherrytree.jpg
 swaybg -m fill -i $wallpaper &
 
 # Blur the wallpaper and put a copy in tmp location for lock screen usage
-convert $wallpaper -blur 16x8 /tmp/lock_img.jpg &
+magick $wallpaper -blur 16x8 /tmp/lock_img.jpg &
 
 mako &
 kanshi &
