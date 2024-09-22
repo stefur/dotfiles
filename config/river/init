@@ -4,14 +4,16 @@
 
 if [ -d /sys/class/power_supply/BAT* ]; then
   # Set the brightness since it defaults to 100% on boot
-  brightnessctl set 10%
+  brightnessctl set 30%
 fi
 
 waybar &
 wlsunset -l 59.6 -L 18.1 &
 
 wallpaper=~/wallpapers/cherrytree.jpg
-swaybg -m fill -i $wallpaper &
+wbg $wallpaper &
+
+rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob &
 
 # Blur the wallpaper and put a copy in tmp location for lock screen usage
 magick $wallpaper -blur 16x8 /tmp/lock_img.jpg &
@@ -169,16 +171,20 @@ riverctl map normal $mod 7 spawn "${music_ctrl}Previous"
 riverctl map normal $mod 8 spawn "${music_ctrl}PlayPause"
 riverctl map normal $mod 9 spawn "${music_ctrl}Next"
 
-# Screen brightness control
-riverctl map normal None XF86MonBrightnessDown spawn 'brightnessctl set 5%-'
-riverctl map normal None XF86MonBrightnessUp spawn 'brightnessctl set +5%'
+for mode in normal locked
+do
+    # Screen brightness control
+    riverctl map $mode None XF86MonBrightnessDown spawn 'brightnessctl set 5%- | sed -En "s/.*\(([0-9]+)%\).*/\1/p" > $WOBSOCK'
+    riverctl map $mode None XF86MonBrightnessUp spawn 'brightnessctl set +5% | sed -En "s/.*\(([0-9]+)%\).*/\1/p" > $WOBSOCK'
 
-# Volume controls
-riverctl map normal None XF86AudioRaiseVolume spawn 'pactl set-sink-volume 0 +5%'
-riverctl map normal None XF86AudioLowerVolume spawn 'pactl set-sink-volume 0 -5%'
-riverctl map normal None XF86AudioMute spawn 'pactl set-sink-mute 0 toggle'
-# Extra mute button in case of no mediakeys
-riverctl map normal $mod+$shift M spawn 'pactl set-sink-mute 0 toggle'
+    # Volume controls
+    riverctl map -repeat $mode None XF86AudioRaiseVolume spawn '(wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED && echo 0 > $WOBSOCK) || (wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ --limit 1.0 && wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed "s/[^0-9]//g" > $WOBSOCK)'
+    riverctl map -repeat $mode None XF86AudioLowerVolume spawn '(wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED && echo 0 > $WOBSOCK) || (wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%- && wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed "s/[^0-9]//g" > $WOBSOCK)'
+    riverctl map $mode None XF86AudioMute spawn 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && (wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED && echo 0 > $WOBSOCK) || wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed "s/[^0-9]//g" > $WOBSOCK'
+    # Extra mute button in case of no mediakeys
+    riverctl map $mode $mod+$shift M spawn 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && (wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED && echo 0 > $WOBSOCK) || wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed "s/[^0-9]//g" > $WOBSOCK'
+done
+
 
 # Set background and border color
 riverctl border-color-focused 0xB6AFC9

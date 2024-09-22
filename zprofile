@@ -5,11 +5,11 @@ export MOZ_ENABLE_WAYLAND=1
 export XDG_SESSION_TYPE=wayland
 export GNUPGHOME=$HOME/.config/gnupg
 
-# Ensure session address set by turnstile is exported (should not be necessary)
-export DBUS_SESSION_BUS_ADDRESS="${DBUS_SESSION_BUS_ADDRESS:=unix:path=/run/user/$(id -u)/bus}"
-
 # User services managed by turnstile
 export SVDIR=$HOME/.config/service
+
+# Set up a socket for wob
+export WOBSOCK=$XDG_RUNTIME_DIR/wob.sock
 
 # Path
 if [ -d "$HOME/.local/bin" ] ;
