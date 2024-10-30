@@ -1,0 +1,3 @@
+swipe direction="e" fingers=3 end="flow cycle-tags previous 6"
+swipe direction="w" fingers=3 end="flow cycle-tags next 6"
+hold fingers=4 action="riverctl toggle-fullscreen"
