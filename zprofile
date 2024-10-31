@@ -20,7 +20,7 @@ if [[ -z $WAYLAND_DISPLAY && $(tty) = "/dev/tty1" ]]; then
   echo "Select:"
   select compositor in "river" "tty"; do
       case $compositor in
-          river ) exec river;;
+          river ) exec env XDG_CURRENT_DESKTOP=river river;;
           tty ) exec /usr/bin/zsh;;
       esac
   done

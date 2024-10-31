@@ -30,9 +30,6 @@ swayidle timeout 300 "lock.sh" timeout 600 "wlopm --off '*'" resume "wlopm --on 
 gpg-agent --daemon &
 /usr/libexec/polkit-gnome-authentication-agent-1 &
 
-# Fix for flatpak to properly use portals to follow URL:s etc.
-dbus-update-activation-environment DISPLAY
-
 # Allow local connections to X (specific fix for gparted)
 xhost +local:
 
