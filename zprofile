@@ -5,6 +5,8 @@ export MOZ_ENABLE_WAYLAND=1
 export XDG_SESSION_TYPE=wayland
 export GNUPGHOME=$HOME/.config/gnupg
 
+export DOCKER_HOST=unix:///var/$XDG_RUNTIME_DIR/podman/podman.sock
+
 # User services managed by turnstile
 export SVDIR=$HOME/.config/service
 
