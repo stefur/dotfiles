@@ -16,7 +16,7 @@
     "interval": 60
   },
   "custom/spotify": {
-    "format": "<span color='#b6afc9'>{icon}</span> {}",
+    "format": "<span color='#769675'>{icon}</span> {}",
     "format-icons": {
       "Playing": "󰐊",
       "Paused": "󰏤"

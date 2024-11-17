@@ -12,7 +12,7 @@ wlsunset -l 59.6 -L 18.1 &
 
 gestures &
 
-wallpaper=~/wallpapers/cherrytree.jpg
+wallpaper=~/wallpapers/white_flowers.jpg
 wbg $wallpaper &
 
 rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob &
@@ -21,6 +21,8 @@ rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob &
 magick $wallpaper -blur 16x8 /tmp/lock_img.jpg &
 
 kanshi &
+
+mako &
 
 # Lock the screen after 300 seconds, turn off the screen after another 300
 swayidle timeout 300 "lock.sh" timeout 600 "wlopm --off '*'" resume "wlopm --on '*'" timeout 900 "sudo zzz" &
@@ -187,8 +189,8 @@ done
 
 
 # Set background and border color
-riverctl border-color-focused 0xB6AFC9
-riverctl border-color-unfocused 0x54546D
+riverctl border-color-focused 0x769675
+riverctl border-color-unfocused 0x7d7d7d
 riverctl border-width 3
 
 # Passthrough mode, useful when running virtual machines

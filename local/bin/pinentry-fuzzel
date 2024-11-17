@@ -1,21 +1,11 @@
 #!/bin/sh
 
-ENABLE_LOGGING="FALSE"
-logger() {
-   if [ "$ENABLE_LOGGING" = "TRUE" ]; then
-       /usr/bin/logger -t "${0} [$$]" "$@";
-   fi
-}
-
 # Base command and misc variables
 DESC=""
 PROMPT=""
 
 echo "OK Please go ahead"
 while read cmd rest; do
-   logger "RAW=< ${cmd} ${rest} >"
-   logger "cmd=<${cmd}> rest=<${rest}>"
-
     case $cmd in
         GETINFO)
             case "$rest" in
@@ -44,10 +34,10 @@ while read cmd rest; do
             ;;
 
         SETERROR)
-            logger "ERROR $rest"
-            fuzzel --prompt-only "${rest}" --cache /dev/null --password --dmenu
-            echo "OK"
-	    exit 1
+            exit 1
+            # Password retry not working correctly, so exit fast instead
+            #echo "$(fuzzel.sh --prompt-only "🔐 ${rest} " --cache /dev/null --dmenu --password)"
+            #echo "OK"
 	    ;;
 
         SETPROMPT)
@@ -56,13 +46,12 @@ while read cmd rest; do
             ;;
 
         GETPIN | getpin)
-            echo "D $(fuzzel -f firacoderetina:size=12 --dpi-aware=no -w 42 -b b6afc9ff --prompt-color 1d1d16ff -B 0 --prompt-only "🔐 ${PROMPT} " --cache /dev/null --dmenu --password)"
+            echo "D $(fuzzel.sh --prompt-only "🔐 ${PROMPT} " --cache /dev/null --dmenu --password)"
             echo "OK"
             ;;
 
         BYE|bye)
             echo "OK closing connection"
-            logger "EXITING"
             exit 0
             ;;
 
