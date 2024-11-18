@@ -64,15 +64,14 @@ button:hover {
 }
 
 #tags button.occupied.urgent {
-    color: @bg;
-    background-color: #E46876;
+    padding-top: 0.7em;
+    border-bottom: 0.3em solid @urgent;
 }
 
 #tags button.focused.occupied {
     color: @bg;
 }
 
-#custom-containers,
 #pulseaudio,
 #battery,
 #bluetooth,
@@ -107,6 +106,12 @@ button:hover {
     padding-top: 0.4em;
     padding-left: 0.6em;
     padding-right: 0.3em;
+}
+
+#custom-containers {
+    padding-top: 0.4em;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
 }
 
 #custom-spotify {
