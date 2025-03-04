@@ -75,7 +75,7 @@ button:hover {
 #pulseaudio,
 #battery,
 #bluetooth,
-#idle_inhibitor,
+#custom-wib,
 #network {
     color: @text;
     padding-bottom: 0.3em;

@@ -27,6 +27,9 @@ mako &
 # Lock the screen after 300 seconds, turn off the screen after another 300
 swayidle timeout 300 "lock.sh" timeout 600 "wlopm --off '*'" resume "wlopm --on '*'" timeout 900 "sudo zzz" &
 
+# Workaround to get the idle inhibition from firefox et al to actually work
+/usr/libexec/xdg-desktop-portal --replace &
+
 # Auth agents
 gpg-agent --daemon &
 /usr/libexec/polkit-gnome-authentication-agent-1 &
@@ -84,6 +87,7 @@ riverctl map normal $mod P spawn pass.sh
 riverctl map normal $mod O spawn otp.sh
 riverctl map normal $mod E spawn emojis.sh
 riverctl map normal $mod K spawn 'kanshictl reload'
+riverctl map normal $mod I spawn 'pkill -USR1 wib'
 
 # Lock the screen
 riverctl map normal $mod L spawn lock.sh
