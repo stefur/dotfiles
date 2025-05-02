@@ -1,0 +1,120 @@
+@define-color bg #dadada;
+@define-color fg #769675;
+@define-color default #7d7d7d;
+@define-color urgent #c62336;
+@define-color warning #ff8033;
+@define-color text #2f2f2f;
+
+* {
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    font-family: "Fira Code Retina", monospace;
+    font-size: 0.975em;
+    font-weight: 700;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+#window {
+    color: @text;
+}
+
+#right {
+    background-color: @bg;
+    border-bottom-left-radius: 0.7em;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+
+}
+
+button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background: inherit;
+}
+
+#workspaces button {
+    padding-top: 0.4em;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+    padding-bottom: 0.3em;
+    border-radius: 0;
+    background-color: @bg;
+    transition-property: none;
+    font-size: 1.3em;
+}
+
+#workspaces button:last-child {
+    border-bottom-right-radius: 0.7em;
+
+}
+
+#pulseaudio,
+#battery,
+#bluetooth,
+#custom-wib,
+#network {
+    color: @text;
+    padding-bottom: 0.3em;
+    padding-top: 0.5em;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+    font-size: 1.1em;
+}
+
+#mode.normal {
+    color: transparent;
+    background-color: transparent;
+}
+
+#mode.passthrough {
+    color: @urgent;
+    background-color: @bg;
+    padding: 0.4em;
+    border-bottom-right-radius: 0.7em;
+    border-bottom-left-radius: 0.7em;
+}
+
+#tray {
+    padding-top: 0.2em;
+    padding-right: 0.6em;
+    padding-left: 0.6em;
+}
+
+#clock {
+    padding-top: 0.4em;
+    padding-left: 0.6em;
+    padding-right: 0.3em;
+}
+
+#custom-containers {
+    padding-top: 0.4em;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+}
+
+#custom-spotify {
+    border-bottom-right-radius: 0.7em;
+    border-bottom-left-radius: 0.7em;
+    color: @text;
+    padding-top: 0.4em;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    background-color: @bg;
+}
+
+#pulseaudio,
+#bluetooth {
+    font-size: 1.18em;
+}
+
+#battery.discharging.warning {
+    color: @warning;
+}
+
+#battery.discharging.critical {
+    color: @urgent;
+}
