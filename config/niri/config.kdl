@@ -133,10 +133,10 @@ binds {
     Mod+R { spawn "fuzzel.sh"; }
     Mod+L allow-inhibiting=false { spawn "lock.sh"; }
 
-    Mod+W { spawn "niri_spawn_or_focus.sh" "Firefox" "firefox"; }
-    Mod+S { spawn "niri_spawn_or_focus.sh" "Spotify" "flatpak run com.spotify.Client"; }
-    Mod+D { spawn "niri_spawn_or_focus.sh" "discord" "flatpak run com.discordapp.Discord"; }
-    Mod+C { spawn "niri_spawn_or_focus.sh" "Signal" "signal-desktop"; }
+    Mod+W { spawn "nictl" "spawn-or-focus" "Firefox" "firefox"; }
+    Mod+S { spawn "nictl" "spawn-or-focus" "Spotify" "flatpak run com.spotify.Client"; }
+    Mod+D { spawn "nictl" "spawn-or-focus" "discord" "flatpak run com.discordapp.Discord"; }
+    Mod+C { spawn "nictl" "spawn-or-focus" "Signal" "signal-desktop"; }
     Mod+Tab { spawn "niri_open_windows.sh"; }
     Mod+N { spawn "bash" "-c" "foot --app-id=newsboat newsboat -C=~/.config/newsboat/config -u=~/sync/files/newsboat/urls -c=~/sync/files/newsboat/cache.db"; }
     Mod+Ctrl+Return { spawn "pcmanfm"; }
@@ -198,8 +198,8 @@ binds {
     Mod+Shift+U         { move-workspace-down; }
     Mod+Shift+I         { move-workspace-up; }
 
-    Mod+WheelScrollDown      cooldown-ms=150 { spawn "niri_cycle_workspaces.sh" "down"; }
-    Mod+WheelScrollUp        cooldown-ms=150 { spawn "niri_cycle_workspaces.sh" "up"; }
+    Mod+WheelScrollDown      cooldown-ms=150 { spawn "nictl" "cycle-workspace" "down"; }
+    Mod+WheelScrollUp        cooldown-ms=150 { spawn "nictl" "cycle-workspace" "up"; }
     Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
     Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
 
@@ -228,8 +228,8 @@ binds {
 
     Mod+Shift+Left  { consume-or-expel-window-left; }
     Mod+Shift+Right { consume-or-expel-window-right; }
-    Mod+Shift+Up  { spawn "niri_cycle_workspaces.sh" "up"; }
-    Mod+Shift+Down  { spawn "niri_cycle_workspaces.sh" "down"; }
+    Mod+Shift+Up  { spawn "nictl" "cycle-workspace" "up"; }
+    Mod+Shift+Down  { spawn "nictl" "cycle-workspace" "down"; }
 
     Mod+Space { switch-preset-column-width; }
     Mod+Shift+R { switch-preset-window-height; }
