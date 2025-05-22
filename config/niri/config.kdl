@@ -83,6 +83,8 @@ layout {
     center-focused-column "never"
     always-center-single-column
 
+    background-color "transparent"
+
     preset-column-widths {
         proportion 0.33333
         proportion 0.5
@@ -128,6 +130,25 @@ window-rule {
     clip-to-geometry true
 }
 
+overview {
+    workspace-shadow {
+        off
+    }
+}
+
+gestures {
+    hot-corners {
+        off
+    }
+}
+
+layer-rule {
+    // This is for swaybg; change for other wallpaper tools.
+    // Find the right namespace by running niri msg layers.
+    match namespace="^wallpaper$"
+    place-within-backdrop true
+}
+
 binds {
     Mod+Return { spawn "foot"; }
     Mod+R { spawn "fuzzel.sh"; }
@@ -137,7 +158,7 @@ binds {
     Mod+S { spawn "nictl" "spawn-or-focus" "Spotify" "flatpak run com.spotify.Client"; }
     Mod+D { spawn "nictl" "spawn-or-focus" "discord" "flatpak run com.discordapp.Discord"; }
     Mod+C { spawn "nictl" "spawn-or-focus" "Signal" "signal-desktop"; }
-    Mod+Tab { spawn "niri_open_windows.sh"; }
+    Mod+Tab { toggle-overview; }
     Mod+N { spawn "bash" "-c" "foot --app-id=newsboat newsboat -C=~/.config/newsboat/config -u=~/sync/files/newsboat/urls -c=~/sync/files/newsboat/cache.db"; }
     Mod+Ctrl+Return { spawn "pcmanfm"; }
     Mod+M { spawn "mount.sh"; }
