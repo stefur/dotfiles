@@ -13,8 +13,16 @@ setopt hist_ignore_dups
 # Override autosuggest color
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#e7c664,underline"
 
-# Set the prompt
+# Set the prompt and level indicators
 PROMPT="%B%F{66}%n%f%b %B%F{102}%~%f%b %B%F{102}$%f%b "
+if [[ $SHLVL -gt 1 ]]; then
+  case $SHLVL in
+      2) PROMPT="%B%F{130}᎓%f%b ${PROMPT}" ;;
+      3) PROMPT="%B%F{130}⁖%f%b ${PROMPT}" ;;
+      4) PROMPT="%B%F{130}⁘%f%b ${PROMPT}" ;;
+      *) PROMPT="%B%F{130}⁜ ${SHLVL}%f%b ${PROMPT}" ;;
+  esac            
+fi
 
 # Use gpg-agent instead of ssh-agent
 unset SSH_AGENT_PID
@@ -66,6 +74,8 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search
 bindkey "^[[B" down-line-or-beginning-search
+
+alias ngc="nix-collect-garbage"
 
 alias ls="ls -al --color=auto --hyperlink=auto --group-directories-first -h"
 
