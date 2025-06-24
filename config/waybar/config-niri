@@ -121,8 +121,9 @@
     "niri/workspaces": {
         "format": "{icon}",
         "format-icons": {
-            "default": "\ueabc",
-            "active": "\uea71"
+            "default": "\uea71",
+            "active": "\uea71",
+            "empty": "\ueabc"
         }
     },
     "group/right": {
