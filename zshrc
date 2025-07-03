@@ -76,6 +76,8 @@ bindkey "^[[A" up-line-or-beginning-search
 bindkey "^[[B" down-line-or-beginning-search
 
 alias ngc="nix-collect-garbage"
+# Toggle monitor to TB/DP
+alias tb='ddcutil getvcp 60 | grep -q "0x0f" && ddcutil setvcp 60 10 || ddcutil setvcp 60 15'
 
 alias ls="ls -al --color=auto --hyperlink=auto --group-directories-first -h"
 

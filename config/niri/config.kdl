@@ -78,6 +78,13 @@ output "eDP-1" {
     variable-refresh-rate
 }
 
+output "DP-1" {
+    mode "3440x1440@120"
+    scale 1
+    transform "normal"
+    variable-refresh-rate
+}
+
 layout {
     gaps 8
     center-focused-column "never"
