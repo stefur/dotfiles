@@ -1,6 +1,6 @@
 @define-color bg #dadada;
-@define-color fg #769675;
-@define-color default #7d7d7d;
+@define-color fg #536c52;
+@define-color default #a1b7a0;
 @define-color urgent #c62336;
 @define-color warning #ff8033;
 @define-color text #2f2f2f;
@@ -36,24 +36,49 @@ button:hover {
     background: inherit;
 }
 
-#workspaces button {
-    padding-top: 0.4em;
-    padding-left: 0.6em;
-    padding-right: 0.6em;
-    padding-bottom: 0.3em;
-    border-radius: 0;
+#workspaces {
     background-color: @bg;
+    padding: 0.4em 0.6em;
+    border-radius: 0;
+    border-bottom-right-radius: 0.7em;
     transition-property: none;
-    font-size: 1.3em;
 }
 
-#workspaces button:last-child {
-    border-bottom-right-radius: 0.7em;
+#workspaces button {
+    all: unset;
+    min-width: 0.4em;
+    margin: 0 0.35em;
+    border-radius: 0.5em;
+    background-color: @default;
+    border: 0.01em solid @default;
+}
 
+#workspaces button.focused.empty {
+    min-width: 0.5em;
+    margin: 0 0.35em;
+    border-radius: 2em;
+    border: 0.1em solid @default;
+    background-color: @bg;
+    border-color: @fg;
 }
 
 #workspaces button.focused {
-    color: @fg;
+    background-color: @fg;
+    border-color: @fg;
+}
+
+#workspaces button.empty {
+    all: unset;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    color: transparent;
+    background-image: none;
+    box-shadow: none;
+    outline: none;
 }
 
 #pulseaudio,
