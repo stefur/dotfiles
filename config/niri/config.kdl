@@ -177,7 +177,7 @@ binds {
 
     Mod+B { spawn "pkill" "-USR1" "waybar"; }
 
-    XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+    XF86AudioMicMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
     Mod+Q allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
     
     XF86AudioRaiseVolume allow-when-locked=true { spawn "sh" "-c" "(wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED && echo 0 > $WOBSOCK) || (wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ --limit 1.0 && wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed 's/[^0-9]//g' > $WOBSOCK)"; }
@@ -186,10 +186,8 @@ binds {
     // Extra mute button in case of no mediakeys
     Mod+Shift+M allow-when-locked=true { spawn "sh" "-c" "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && (wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED && echo 0 > $WOBSOCK) || wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed 's/[^0-9]//g' > $WOBSOCK"; }
 
-    XF86MonBrightnessDown { spawn "bash" "-c" "brightnessctl set 5%- | sed -En 's/.*\\(([0-9]+)%\\).*/\\1/p' > $WOBSOCK"; }
-    XF86MonBrightnessUp { spawn "bash" "-c" "brightnessctl set +5% | sed -En 's/.*\\(([0-9]+)%\\).*/\\1/p' > $WOBSOCK"; }
-
-
+    XF86MonBrightnessDown { spawn "brightness.sh" "down" "2"; }
+    XF86MonBrightnessUp { spawn "brightness.sh" "up" "2"; }
     Mod+Shift+C { close-window; }
 
     Mod+Left  { focus-column-left-or-last; }
