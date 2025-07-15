@@ -50,16 +50,13 @@ button:hover {
     margin: 0 0.35em;
     border-radius: 0.5em;
     background-color: @default;
-    border: 0.01em solid @default;
 }
 
 #workspaces button.focused.empty {
-    min-width: 0.5em;
+    min-width: 0.4em;
     margin: 0 0.35em;
-    border-radius: 2em;
-    border: 0.1em solid @default;
-    background-color: @bg;
-    border-color: @fg;
+    border-radius: 0.5em;
+    background-color: @fg;
 }
 
 #workspaces button.focused {
@@ -92,19 +89,6 @@ button:hover {
     padding-left: 0.6em;
     padding-right: 0.6em;
     font-size: 1.1em;
-}
-
-#mode.normal {
-    color: transparent;
-    background-color: transparent;
-}
-
-#mode.passthrough {
-    color: @urgent;
-    background-color: @bg;
-    padding: 0.4em;
-    border-bottom-right-radius: 0.7em;
-    border-bottom-left-radius: 0.7em;
 }
 
 #tray {
