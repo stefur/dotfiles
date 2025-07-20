@@ -13,7 +13,7 @@ spawn-at-startup "dbus-update-activation-environment" "DISPLAY"
 spawn-at-startup "xhost" "+local:"
 
 // TODO
-// lid events & screenshot
+// lid events
 
 // For xwayland-satellite
 environment {
@@ -32,10 +32,41 @@ cursor {
     xcursor-theme "Adwaita"
 }
 
+animations {
+    slowdown 0.5
+}
+
+workspace "browser"
+workspace "dev"
+workspace "chat"
+workspace "music"
+
 window-rule {
     match app-id="^Firefox"
+    open-maximized true
+    open-on-workspace "browser"
+}
+
+window-rule {
     match app-id="^Code"
     open-maximized true
+    open-on-workspace "dev"
+}
+
+window-rule {
+    match app-id="^Signal"
+    open-on-workspace "chat"
+}
+
+window-rule {
+    match app-id="^discord"
+    open-on-workspace "chat"
+}
+
+window-rule {
+    match app-id="^Spotify"
+    open-maximized true
+    open-on-workspace "music"
 }
 
 window-rule {
@@ -162,6 +193,7 @@ binds {
     Mod+S { spawn "nictl" "spawn-or-focus" "Spotify" "flatpak run com.spotify.Client"; }
     Mod+D { spawn "nictl" "spawn-or-focus" "discord" "flatpak run com.discordapp.Discord"; }
     Mod+C { spawn "nictl" "spawn-or-focus" "Signal" "signal-desktop"; }
+    Mod+V { spawn "nictl" "spawn-or-focus" "Code - OSS" "code-oss"; }
     Mod+Tab { toggle-overview; }
     Mod+N { spawn "bash" "-c" "foot --app-id=newsboat newsboat -C=~/.config/newsboat/config -u=~/sync/files/newsboat/urls -c=~/sync/files/newsboat/cache.db"; }
     Mod+Ctrl+Return { spawn "pcmanfm"; }
@@ -221,8 +253,8 @@ binds {
     Mod+Shift+J         { move-workspace-down; }
     Mod+Shift+U         { move-workspace-up; }
 
-    Mod+WheelScrollDown      cooldown-ms=150 { spawn "nictl" "cycle-workspace" "down"; }
-    Mod+WheelScrollUp        cooldown-ms=150 { spawn "nictl" "cycle-workspace" "up"; }
+    Mod+WheelScrollDown      cooldown-ms=150 { spawn "nictl" "cycle-workspace" "down" "--skip-next-empty"; }
+    Mod+WheelScrollUp        cooldown-ms=150 { spawn "nictl" "cycle-workspace" "up" "--skip-next-empty"; }
     Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
     Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
 
@@ -242,17 +274,17 @@ binds {
     Mod+4 { focus-workspace 4; }
     Mod+5 { focus-workspace 5; }
     Mod+6 { focus-workspace 6; }
-    Mod+Shift+1 { move-window-to-workspace 1; }
-    Mod+Shift+2 { move-window-to-workspace 2; }
-    Mod+Shift+3 { move-window-to-workspace 3; }
-    Mod+Shift+4 { move-window-to-workspace 4; }
-    Mod+Shift+5 { move-window-to-workspace 5; }
-    Mod+Shift+6 { move-window-to-workspace 6; }
+    Mod+Shift+1 { move-window-to-workspace 1 focus=false; }
+    Mod+Shift+2 { move-window-to-workspace 2 focus=false; }
+    Mod+Shift+3 { move-window-to-workspace 3 focus=false; }
+    Mod+Shift+4 { move-window-to-workspace 4 focus=false; }
+    Mod+Shift+5 { move-window-to-workspace 5 focus=false; }
+    Mod+Shift+6 { move-window-to-workspace 6 focus=false; }
 
     Mod+Shift+Left  { consume-or-expel-window-left; }
     Mod+Shift+Right { consume-or-expel-window-right; }
-    Mod+Shift+Up  { spawn "nictl" "cycle-workspace" "up"; }
-    Mod+Shift+Down  { spawn "nictl" "cycle-workspace" "down"; }
+    Mod+Shift+Up  { spawn "nictl" "cycle-workspace" "up" "--skip-next-empty"; }
+    Mod+Shift+Down  { spawn "nictl" "cycle-workspace" "down" "--skip-next-empty"; }
 
     Mod+Space { switch-preset-column-width; }
     Mod+Shift+R { switch-preset-window-height; }
@@ -272,12 +304,9 @@ binds {
     Mod+T { toggle-column-tabbed-display; }
 
     Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+    Mod+Shift+P { screenshot; }
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     Mod+Shift+Q { quit; }
-
-    Mod+Shift+P { power-off-monitors; }
 }

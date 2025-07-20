@@ -42,6 +42,8 @@
         "format-charging": "{icon} \udb85\udc0b",
         "format-plugged": "{icon} \udb81\udea5",
         "format-not-charging": "{icon} \udb81\udea5",
+        "format-warning": "{icon} {capacity}%",
+        "format-critical": "{icon} {capacity}%",
         "format-icons": [
             "\udb80\udc8e",
             "\udb80\udc7a",
@@ -119,7 +121,7 @@
         "on-click": "pavucontrol"
     },
     "niri/workspaces": {
-        "format": "{name}"
+        "format": ""
     },
     "group/right": {
         "orientation": "horizontal",
