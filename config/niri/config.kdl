@@ -117,7 +117,7 @@ output "DP-1" {
 
 layout {
     gaps 8
-    center-focused-column "never"
+    center-focused-column "on-overflow"
     always-center-single-column
 
     background-color "transparent"
@@ -291,6 +291,7 @@ binds {
     Mod+Ctrl+R { reset-window-height; }
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
+    Mod+X { center-column; }
 
     Mod+Shift+Space { expand-column-to-available-width; }
 

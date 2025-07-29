@@ -82,6 +82,7 @@ button:hover {
 #battery,
 #bluetooth,
 #custom-wib,
+#custom-notifications,
 #network {
     color: @text;
     padding-bottom: 0.3em;
