@@ -16,6 +16,8 @@ d = ["extend_to_line_bounds", "yank", "yank_to_clipboard", "delete_selection"]
 y = ["extend_to_line_bounds", "yank", "yank_to_clipboard"]
 C-s = ":w"
 C-q = ":quit"
+C-up = "page_cursor_half_up"
+C-down = "page_cursor_half_down"
 
 [keys.insert]
 C-right = "move_next_word_start"
