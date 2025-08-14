@@ -77,7 +77,7 @@ bindkey "^[[B" down-line-or-beginning-search
 
 alias ngc="nix-collect-garbage"
 # Toggle monitor to TB/DP
-alias tb='ddcutil getvcp 60 | grep -q "0x0f" && ddcutil setvcp 60 10 || ddcutil setvcp 60 15'
+alias tm='ddcutil getvcp 60 | grep -q "0x0f" && ddcutil setvcp 60 10 || ddcutil setvcp 60 15'
 
 alias ls="ls -al --color=auto --hyperlink=auto --group-directories-first -h"
 
@@ -104,9 +104,9 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 autoload -Uz compinit && compinit
 
-# My plugins from the .zsh folder
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Load plugins
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # This MUST be at the end of this file
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 . "$HOME/.cargo/env"

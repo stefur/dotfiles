@@ -5,18 +5,8 @@
 dotfiles=$(pwd)
 
 # Set up zsh
-mkdir -p ~/.zsh
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh/zsh-autosuggestions
-
 ln -s ${dotfiles}/zprofile ~/.zprofile
 ln -s ${dotfiles}/zshrc ~/.zshrc
-
-# Set up vim
-mkdir -p ~/.vim/colors
-curl -O https://raw.githubusercontent.com/NLKNguyen/papercolor-theme/refs/heads/master/colors/PaperColor.vim
-mv PaperColor.vim ~/.vim/colors
-ln -s ${dotfiles}/vimrc ~/.vimrc
 
 # Set up the rest of the config files and scripts
 mkdir -p ~/.config

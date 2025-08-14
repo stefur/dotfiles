@@ -48,7 +48,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="^Code"
+    match app-id="^code"
     open-maximized true
     open-on-workspace "dev"
 }
@@ -187,13 +187,13 @@ layer-rule {
 binds {
     Mod+Return { spawn "foot"; }
     Mod+R { spawn "fuzzel.sh"; }
-    Mod+L allow-inhibiting=false { spawn "lock.sh"; }
+    Mod+L allow-inhibiting=false { spawn "sh" "-c" "niri msg action power-off-monitors && lock.sh"; }
 
     Mod+W { spawn "nictl" "spawn-or-focus" "Firefox" "firefox"; }
     Mod+S { spawn "nictl" "spawn-or-focus" "Spotify" "flatpak run com.spotify.Client"; }
     Mod+D { spawn "nictl" "spawn-or-focus" "discord" "flatpak run com.discordapp.Discord"; }
-    Mod+C { spawn "nictl" "spawn-or-focus" "Signal" "signal-desktop"; }
-    Mod+V { spawn "nictl" "spawn-or-focus" "Code - OSS" "code-oss"; }
+    Mod+C { spawn "nictl" "spawn-or-focus" "signal" "signal-desktop"; }
+    Mod+V { spawn "nictl" "spawn-or-focus" "code-oss" "code-oss"; }
     Mod+Tab { toggle-overview; }
     Mod+N { spawn "bash" "-c" "foot --app-id=newsboat newsboat -C=~/.config/newsboat/config -u=~/sync/files/newsboat/urls -c=~/sync/files/newsboat/cache.db"; }
     Mod+Ctrl+Return { spawn "pcmanfm"; }

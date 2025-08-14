@@ -4,6 +4,8 @@ export QT_QPA_PLATFORM=wayland-egl
 export MOZ_ENABLE_WAYLAND=1
 export XDG_SESSION_TYPE=wayland
 export GNUPGHOME=$HOME/.config/gnupg
+export EDITOR=hx
+export ELECTRON_OZONE_PLATFORM_HINT=auto
 
 export DOCKER_HOST=unix:///var$XDG_RUNTIME_DIR/podman/podman.sock
 
@@ -23,7 +25,7 @@ if [[ -z $WAYLAND_DISPLAY && $(tty) = "/dev/tty1" ]]; then
   select compositor in "river" "niri" "tty"; do
       case $compositor in
           river ) exec env XDG_CURRENT_DESKTOP=river river;;
-          niri ) exec niri --session;;
+          niri ) exec niri;;
           tty ) exec /usr/bin/zsh;;
       esac
   done
