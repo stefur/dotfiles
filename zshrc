@@ -49,31 +49,13 @@ bindkey "\e\177" undo
 bindkey -s "^[[5~" ""
 bindkey -s "^[[6~" ""
 
-# Ctrl + R to open a search minibuffer, Ctrl + E to accept result
-history-incremental-search-{back,for}ward() {
-  local saved_BUFFER=$BUFFER saved_CURSOR=$CURSOR error
-  BUFFER=
-  zle .$WIDGET -- $saved_BUFFER
-  error=$?
-  if (( error )) BUFFER=$saved_BUFFER CURSOR=$saved_CURSOR
-  return error
-}
-
-# Ctrl + Up or Down to search through history from beginning of cursor position
-autoload -Uz history-incremental-search-backward
-autoload -Uz history-incremental-search-forward
-zle -N history-incremental-search-backward
-zle -N history-incremental-search-forward
-bindkey "^[[1;5A" history-beginning-search-backward
-bindkey "^[[1;5B" history-beginning-search-forward
+# Search with Ctrl + R and use Ctrl + Up/Down to move in results. Ctrl + E to accept.
+bindkey "^[[1;5A" history-incremental-search-backward
+bindkey "^[[1;5B" history-incremental-search-forward
 
 # Regular Up or Down to move through history
-autoload -Uz up-line-or-beginning-search
-autoload -Uz down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-bindkey "^[[A" up-line-or-beginning-search
-bindkey "^[[B" down-line-or-beginning-search
+bindkey "^[[A" history-substring-search-up
+bindkey "^[[B" history-substring-search-down
 
 alias ngc="nix-collect-garbage"
 # Toggle monitor to TB/DP
@@ -106,7 +88,7 @@ autoload -Uz compinit && compinit
 
 # Load plugins
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-# This MUST be at the end of this file
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 . "$HOME/.cargo/env"

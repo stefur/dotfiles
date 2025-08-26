@@ -30,6 +30,20 @@ window#waybar {
 
 }
 
+#left {
+    background-color: @bg;
+    border-bottom-right-radius: 0.7em;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+
+}
+
+#image {
+    padding-left: 0.3em;
+    padding-right: 0.6em;
+    transition-property: none;
+}
+
 button:hover {
     box-shadow: inherit;
     text-shadow: inherit;
@@ -38,30 +52,34 @@ button:hover {
 
 #workspaces {
     background-color: @bg;
-    padding: 0.4em 0.6em;
-    border-radius: 0;
-    border-bottom-right-radius: 0.7em;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
     transition-property: none;
 }
 
 #workspaces button {
     all: unset;
-    min-width: 0.4em;
+    min-width: 1em;
     margin: 0 0.35em;
-    border-radius: 0.5em;
-    background-color: @default;
+    padding: 0;
+    background: radial-gradient(circle 0.4em at center, @default 75%, @bg 100%);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #workspaces button.focused.empty {
-    min-width: 0.4em;
+    min-width: 1em;
     margin: 0 0.35em;
-    border-radius: 0.5em;
-    background-color: @fg;
+    padding: 0;
+    background: radial-gradient(circle 0.4em at center, @fg 75%, @bg 100%);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #workspaces button.focused {
-    background-color: @fg;
-    border-color: @fg;
+    background: radial-gradient(circle 0.4em at center, @fg 75%, @bg 100%);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #workspaces button.empty {

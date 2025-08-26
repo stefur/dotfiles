@@ -191,7 +191,7 @@ binds {
 
     Mod+W { spawn "nictl" "spawn-or-focus" "Firefox" "firefox"; }
     Mod+S { spawn "nictl" "spawn-or-focus" "Spotify" "flatpak run com.spotify.Client"; }
-    Mod+D { spawn "nictl" "spawn-or-focus" "discord" "flatpak run com.discordapp.Discord"; }
+    Mod+D { spawn "nictl" "spawn-or-focus" "com.discordapp.Discord" "flatpak run com.discordapp.Discord"; }
     Mod+C { spawn "nictl" "spawn-or-focus" "signal" "signal-desktop"; }
     Mod+V { spawn "nictl" "spawn-or-focus" "code-oss" "code-oss"; }
     Mod+Tab { toggle-overview; }

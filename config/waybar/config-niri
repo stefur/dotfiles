@@ -4,7 +4,7 @@
     "spacing": 15,
     "height": 30,
     "modules-left": [
-        "niri/workspaces"
+        "group/left"
     ],
     "modules-right": [
         "custom/spotify",
@@ -102,6 +102,10 @@
         "on-click-middle": "pkexec wg-quick up wg0",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}"
     },
+    "image#distro": {
+        "path": "/home/stefur/repos/dev/dotfiles/config/waybar/void.png",
+        "size": 18
+    },
     "tray": {
         "show-passive-items": true,
         "icon-size": 18,
@@ -135,6 +139,13 @@
     },
     "niri/workspaces": {
         "format": ""
+    },
+    "group/left": {
+        "orientation": "horizontal",
+        "modules": [
+            "image#distro",
+            "niri/workspaces"
+        ]
     },
     "group/right": {
         "orientation": "horizontal",
