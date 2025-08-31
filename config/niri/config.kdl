@@ -1,7 +1,7 @@
 spawn-at-startup "wbg" "-s" "/home/stefur/wallpapers/white_flowers.jpg"
 spawn-at-startup "wlsunset" "-l" "59.6" "-L" "18.1"
 spawn-at-startup "magick" "/home/stefur/wallpapers/white_flowers.jpg" "-blur" "16x8" "/tmp/lock_img.jpg"
-spawn-at-startup "waybar" "-c" "/home/stefur/.config/waybar/config-niri" "-s" "/home/stefur/.config/waybar/style-niri.css"
+spawn-at-startup "waybar"
 spawn-at-startup "sh" "-c" "swayidle -w before-sleep \"lock.sh\" timeout 300 \"lock.sh\" timeout 600 \"wlopm --off '*'\" resume \"wlopm --on '*'\" timeout 900 \"systemctl suspend\""
 spawn-at-startup "/usr/libexec/polkit-gnome-authentication-agent-1"
 spawn-at-startup "gpg-agent" "--daemon"
@@ -56,7 +56,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="^Spotify"
+    match app-id="^spotify"
     open-maximized true
     open-on-workspace "music"
 }
