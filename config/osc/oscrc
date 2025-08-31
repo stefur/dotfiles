@@ -1,0 +1,8 @@
+[general]
+use_keyring=1
+build-root = /home/stefur/pkgs/build/%(repo)s-%(arch)s
+
+[https://api.opensuse.org]
+user=stefur
+credentials_mgr_class=osc.credentials.KeyringCredentialsManager:keyutils.osc.OscKernelKeyringBackend
+trusted_prj=openSUSE:Tumbleweed

@@ -103,7 +103,7 @@
         "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}"
     },
     "image#distro": {
-        "path": "/home/stefur/repos/dotfiles/config/waybar/void.png",
+        "path": "/home/stefur/repos/dotfiles/config/waybar/opensuse.png",
         "size": 18
     },
     "tray": {

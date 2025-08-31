@@ -13,16 +13,7 @@ setopt hist_ignore_dups
 # Override autosuggest color
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#e7c664,underline"
 
-# Set the prompt and level indicators
 PROMPT="%B%F{66}%n%f%b %B%F{102}%~%f%b %B%F{102}$%f%b "
-if [[ $SHLVL -gt 1 ]]; then
-  case $SHLVL in
-      2) PROMPT="%B%F{130}᎓%f%b ${PROMPT}" ;;
-      3) PROMPT="%B%F{130}⁖%f%b ${PROMPT}" ;;
-      4) PROMPT="%B%F{130}⁘%f%b ${PROMPT}" ;;
-      *) PROMPT="%B%F{130}⁜ ${SHLVL}%f%b ${PROMPT}" ;;
-  esac            
-fi
 
 # Use gpg-agent instead of ssh-agent
 unset SSH_AGENT_PID
@@ -49,15 +40,26 @@ bindkey "\e\177" undo
 bindkey -s "^[[5~" ""
 bindkey -s "^[[6~" ""
 
-# Search with Ctrl + R and use Ctrl + Up/Down to move in results. Ctrl + E to accept.
-bindkey "^[[1;5A" history-incremental-search-backward
-bindkey "^[[1;5B" history-incremental-search-forward
+# Ctrl + R to open a search minibuffer, Ctrl + E to accept result
+history-incremental-search-{back,for}ward() {
+  local saved_BUFFER=$BUFFER saved_CURSOR=$CURSOR error
+  BUFFER=
+  zle .$WIDGET -- $saved_BUFFER
+  error=$?
+  if (( error )) BUFFER=$saved_BUFFER CURSOR=$saved_CURSOR
+  return error
+}
 
-# Regular Up or Down to move through history
-bindkey "^[[A" history-substring-search-up
-bindkey "^[[B" history-substring-search-down
+# Ctrl + Up or Down to search through history from beginning of cursor position
+autoload -Uz history-incremental-search-backward
+autoload -Uz history-incremental-search-forward
 
-alias ngc="nix-collect-garbage"
+zle -N history-incremental-search-backward
+zle -N history-incremental-search-forward
+
+bindkey "^[[1;5A" history-beginning-search-backward
+bindkey "^[[1;5B" history-beginning-search-forward
+
 # Toggle monitor to TB/DP
 alias tm='ddcutil getvcp 60 | grep -q "0x0f" && ddcutil setvcp 60 10 || ddcutil setvcp 60 15'
 
@@ -74,12 +76,11 @@ alias rm="rm -i"
 # human-readable sizes
 alias df="df -h"
 
-# void admin
-alias xu="sudo xbps-install -Svu"
-alias xi="sudo xbps-install -Sv"
-alias xr="sudo xbps-remove -Rv"
-alias xc="sudo xbps-remove -ROov"
-alias xq="xbps-query -Rs"
+# opensuse
+alias zup="sudo zypper dup"
+alias zi="sudo zypper in"
+alias zr="sudo zypper rm --clean-deps"
+alias zs="zypper se -s"
 
 # Case-insensitive autocompletion
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
@@ -87,8 +88,5 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 autoload -Uz compinit && compinit
 
 # Load plugins
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-
-. "$HOME/.cargo/env"
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

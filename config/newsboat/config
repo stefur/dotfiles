@@ -1,5 +1,5 @@
 browser "firefox %u"
-include /usr/share/doc/newsboat/contrib/colorschemes/inkpot
+include /usr/share/doc/packages/newsboat/contrib/colorschemes/inkpot
 auto-reload yes
 reload-threads 100
 reload-time 5

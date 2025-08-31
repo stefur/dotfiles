@@ -4,16 +4,6 @@ case "${1}" in
         message="Battery $(acpi | grep -o [0-9]*%)"
         notify-send $message
         ;;
-    mic)
-        pactl set-source-mute 0 toggle
-        status=$(pactl get-source-mute 0 | awk '{print $2}')
-        if [ $status = 'yes' ]; then
-            message="Microphone Muted"
-        else
-            message="Microphone Unmuted"
-        fi
-        notify-send $message
-        ;;
     date)
         weeknumber=$(date +%V)
         date=$(date +%e | cut -d " " -f2)

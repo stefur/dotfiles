@@ -1,19 +1,10 @@
 spawn-at-startup "wbg" "-s" "/home/stefur/wallpapers/white_flowers.jpg"
 spawn-at-startup "wlsunset" "-l" "59.6" "-L" "18.1"
 spawn-at-startup "magick" "/home/stefur/wallpapers/white_flowers.jpg" "-blur" "16x8" "/tmp/lock_img.jpg"
-spawn-at-startup "xwayland-satellite"
 spawn-at-startup "waybar" "-c" "/home/stefur/.config/waybar/config-niri" "-s" "/home/stefur/.config/waybar/style-niri.css"
-spawn-at-startup "mako"
-spawn-at-startup "sh" "-c" "rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob"
-spawn-at-startup "sh" "-c" "swayidle timeout 300 \"lock.sh\" timeout 600 \"wlopm --off '*'\" resume \"wlopm --on '*'\" timeout 900 \"sudo zzz\""
-spawn-at-startup "/usr/libexec/xdg-desktop-portal" "--replace"
-spawn-at-startup "gpg-agent" "--daemon"
+spawn-at-startup "sh" "-c" "swayidle -w before-sleep \"lock.sh\" timeout 300 \"lock.sh\" timeout 600 \"wlopm --off '*'\" resume \"wlopm --on '*'\" timeout 900 \"systemctl suspend\""
 spawn-at-startup "/usr/libexec/polkit-gnome-authentication-agent-1"
-spawn-at-startup "dbus-update-activation-environment" "DISPLAY"
-spawn-at-startup "xhost" "+local:"
-
-// TODO
-// lid events
+spawn-at-startup "gpg-agent" "--daemon"
 
 // For xwayland-satellite
 environment {
@@ -30,6 +21,7 @@ clipboard {
 
 cursor {
     xcursor-theme "Adwaita"
+    xcursor-size 12
 }
 
 animations {
@@ -42,7 +34,7 @@ workspace "chat"
 workspace "music"
 
 window-rule {
-    match app-id="^Firefox"
+    match app-id="^firefox"
     open-maximized true
     open-on-workspace "browser"
 }
@@ -54,7 +46,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="^Signal"
+    match app-id="^org.signal.Signal"
     open-on-workspace "chat"
 }
 
@@ -189,11 +181,11 @@ binds {
     Mod+R { spawn "fuzzel.sh"; }
     Mod+L allow-inhibiting=false { spawn "sh" "-c" "niri msg action power-off-monitors && lock.sh"; }
 
-    Mod+W { spawn "nictl" "spawn-or-focus" "Firefox" "firefox"; }
-    Mod+S { spawn "nictl" "spawn-or-focus" "Spotify" "flatpak run com.spotify.Client"; }
+    Mod+W { spawn "nictl" "spawn-or-focus" "firefox" "firefox"; }
+    Mod+S { spawn "nictl" "spawn-or-focus" "spotify" "flatpak run com.spotify.Client"; }
     Mod+D { spawn "nictl" "spawn-or-focus" "com.discordapp.Discord" "flatpak run com.discordapp.Discord"; }
-    Mod+C { spawn "nictl" "spawn-or-focus" "signal" "signal-desktop"; }
-    Mod+V { spawn "nictl" "spawn-or-focus" "code-oss" "code-oss"; }
+    Mod+C { spawn "nictl" "spawn-or-focus" "org.signal.Signal" "flatpak run org.signal.Signal"; }
+    Mod+V { spawn "nictl" "spawn-or-focus" "code" "code"; }
     Mod+Tab { toggle-overview; }
     Mod+N { spawn "bash" "-c" "foot --app-id=newsboat newsboat -C=~/.config/newsboat/config -u=~/sync/files/newsboat/urls -c=~/sync/files/newsboat/cache.db"; }
     Mod+Ctrl+Return { spawn "pcmanfm"; }
@@ -218,8 +210,8 @@ binds {
     // Extra mute button in case of no mediakeys
     Mod+Shift+M allow-when-locked=true { spawn "sh" "-c" "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && (wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED && echo 0 > $WOBSOCK) || wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed 's/[^0-9]//g' > $WOBSOCK"; }
 
-    XF86MonBrightnessDown { spawn "brightness.sh" "down" "2"; }
-    XF86MonBrightnessUp { spawn "brightness.sh" "up" "2"; }
+    XF86MonBrightnessDown { spawn "sh" "-c" "brightnessctl set 5%- | sed -En 's/.*\\(([0-9]+)%\\).*/\\1/p' > $WOBSOCK"; }
+    XF86MonBrightnessUp { spawn "sh" "-c" "brightnessctl set +5% | sed -En 's/.*\\(([0-9]+)%\\).*/\\1/p' > $WOBSOCK"; }
     Mod+Shift+C { close-window; }
 
     Mod+Left  { focus-column-left-or-last; }
