@@ -46,7 +46,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="^org.signal.Signal"
+    match app-id="^signal"
     open-on-workspace "chat"
 }
 
@@ -184,7 +184,7 @@ binds {
     Mod+W { spawn "nictl" "spawn-or-focus" "firefox" "firefox"; }
     Mod+S { spawn "nictl" "spawn-or-focus" "spotify" "flatpak run com.spotify.Client"; }
     Mod+D { spawn "nictl" "spawn-or-focus" "com.discordapp.Discord" "flatpak run com.discordapp.Discord"; }
-    Mod+C { spawn "nictl" "spawn-or-focus" "org.signal.Signal" "flatpak run org.signal.Signal"; }
+    Mod+C { spawn "nictl" "spawn-or-focus" "signal" "signal-desktop"; }
     Mod+V { spawn "nictl" "spawn-or-focus" "code" "code"; }
     Mod+Tab { toggle-overview; }
     Mod+N { spawn "bash" "-c" "foot --app-id=newsboat newsboat -C=~/.config/newsboat/config -u=~/sync/files/newsboat/urls -c=~/sync/files/newsboat/cache.db"; }
