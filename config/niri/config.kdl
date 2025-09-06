@@ -54,7 +54,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="^Signal"
+    match app-id="^signal"
     open-on-workspace "chat"
 }
 

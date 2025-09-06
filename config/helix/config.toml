@@ -12,7 +12,7 @@ right = ["diagnostics", "selections", "position","position-percentage", "file-en
 [keys.normal]
 C-right = "move_next_word_start"
 C-left = "move_prev_word_start"
-d = ["extend_to_line_bounds", "yank", "yank_to_clipboard", "delete_selection"]
+d = ["extend_to_line_bounds", "delete_selection"]
 y = ["extend_to_line_bounds", "yank", "yank_to_clipboard"]
 C-s = ":w"
 C-q = ":quit"
