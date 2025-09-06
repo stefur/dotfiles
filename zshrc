@@ -77,6 +77,7 @@ alias df="df -h"
 # void admin
 alias xu="sudo xbps-install -Svu"
 alias xc="sudo xbps-remove -ROov"
+alias xr="sudo xbps-remove -Rv"
 
 # Case-insensitive autocompletion
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'

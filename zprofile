@@ -21,12 +21,5 @@ if [ -d "$HOME/.local/bin" ] ;
 fi
 
 if [[ -z $WAYLAND_DISPLAY && $(tty) = "/dev/tty1" ]]; then
-  echo "Select:"
-  select compositor in "river" "niri" "tty"; do
-      case $compositor in
-          river ) exec env XDG_CURRENT_DESKTOP=river river;;
-          niri ) exec niri;;
-          tty ) exec /usr/bin/zsh;;
-      esac
-  done
+          exec niri --session;;
 fi
