@@ -4,6 +4,7 @@ theme = "custom"
 cursorline = true
 true-color = true
 color-modes = false
+smart-tab.enable = false
 
 [editor.statusline]
 right = ["diagnostics", "selections", "position","position-percentage", "file-encoding"]
