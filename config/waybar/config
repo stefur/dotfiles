@@ -103,7 +103,7 @@
         "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}"
     },
     "image#distro": {
-        "path": "/home/stefur/repos/dev/dotfiles/config/waybar/void.png",
+        "path": "/usr/share/icons/hicolor/scalable/apps/void-logo-notext.svg",
         "size": 18
     },
     "tray": {
