@@ -78,6 +78,7 @@ alias df="df -h"
 
 # opensuse
 alias zup="sudo zypper dup"
+alias zref="sudo zypper ref"
 alias zi="sudo zypper in"
 alias zr="sudo zypper rm --clean-deps"
 alias zs="zypper se -s"

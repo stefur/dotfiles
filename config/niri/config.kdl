@@ -182,7 +182,7 @@ binds {
     Mod+L allow-inhibiting=false { spawn "sh" "-c" "niri msg action power-off-monitors && lock.sh"; }
 
     Mod+W { spawn "nictl" "spawn-or-focus" "firefox" "firefox"; }
-    Mod+S { spawn "nictl" "spawn-or-focus" "spotify" "flatpak run com.spotify.Client"; }
+    Mod+S { spawn "nictl" "spawn-or-focus" "spotify" "spotify"; }
     Mod+D { spawn "nictl" "spawn-or-focus" "com.discordapp.Discord" "flatpak run com.discordapp.Discord"; }
     Mod+C { spawn "nictl" "spawn-or-focus" "signal" "signal-desktop"; }
     Mod+V { spawn "nictl" "spawn-or-focus" "code" "code"; }

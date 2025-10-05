@@ -5,7 +5,7 @@
 # Settings for fuzzel
 SETTINGS="-f firacoderetina:size=12,notocoloremoji:size=12 \
              --dpi-aware=no -T foot -w 42 -b dadadaff -t 2f2f2fff --prompt-color 2f2f2fff \
-             -s 769675ff -S 2f2f2fff -B 0 -r 10 -I" #--selection-radius=4"
+             -s 769675ff -S 2f2f2fff -B 0 -r 10 -I --selection-radius=4"
 
 # Check if stdin is not a terminal (input is piped)
 if [ ! -t 0 ]; then

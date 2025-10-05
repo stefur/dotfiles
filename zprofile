@@ -6,15 +6,11 @@ export XDG_SESSION_TYPE=wayland
 export GNUPGHOME=$HOME/.config/gnupg
 export EDITOR=hx
 export ELECTRON_OZONE_PLATFORM_HINT=auto
+
 export ZYPP_PCK_PRELOAD=1
 export ZYPP_CURL2=1
 
 export DOCKER_HOST=unix:///var$XDG_RUNTIME_DIR/podman/podman.sock
-
-# User services managed by turnstile
-export SVDIR=$HOME/.config/service
-
-# Set up a socket for wob
 export WOBSOCK=$XDG_RUNTIME_DIR/wob.sock
 
 # Path
@@ -22,6 +18,6 @@ if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
 
-#if [[ -z $WAYLAND_DISPLAY && $(tty) = "/dev/tty1" ]]; then
-#  niri-session
-#fi
+if [[ -z $WAYLAND_DISPLAY && $(tty) = "/dev/tty1" ]]; then
+  exec niri-session -l
+fi
