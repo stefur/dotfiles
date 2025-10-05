@@ -4,16 +4,13 @@ spawn-at-startup "magick" "/home/stefur/wallpapers/white_flowers.jpg" "-blur" "1
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "waybar"
 spawn-at-startup "mako"
-spawn-at-startup "sh" "-c" "rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob"
-spawn-at-startup "sh" "-c" "swayidle timeout 300 \"lock.sh\" timeout 600 \"wlopm --off '*'\" resume \"wlopm --on '*'\" timeout 900 \"sudo zzz\""
+spawn-sh-at-startup "rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob"
+spawn-sh-at-startup "swayidle timeout 300 \"lock.sh\" timeout 600 \"wlopm --off '*'\" resume \"wlopm --on '*'\" timeout 900 \"sudo zzz\""
 spawn-at-startup "/usr/libexec/xdg-desktop-portal" "--replace"
 spawn-at-startup "gpg-agent" "--daemon"
 spawn-at-startup "/usr/libexec/polkit-gnome-authentication-agent-1"
 spawn-at-startup "dbus-update-activation-environment" "DISPLAY"
 spawn-at-startup "xhost" "+local:"
-
-// TODO
-// lid events
 
 // For xwayland-satellite
 environment {
@@ -187,7 +184,7 @@ layer-rule {
 binds {
     Mod+Return { spawn "foot"; }
     Mod+R { spawn "fuzzel.sh"; }
-    Mod+L allow-inhibiting=false { spawn "sh" "-c" "niri msg action power-off-monitors && lock.sh"; }
+    Mod+L allow-inhibiting=false { spawn-sh "niri msg action power-off-monitors && lock.sh"; }
 
     Mod+W { spawn "nictl" "spawn-or-focus" "Firefox" "firefox"; }
     Mod+S { spawn "nictl" "spawn-or-focus" "Spotify" "spotify"; }
@@ -195,7 +192,7 @@ binds {
     Mod+C { spawn "nictl" "spawn-or-focus" "signal" "signal-desktop"; }
     Mod+V { spawn "nictl" "spawn-or-focus" "code-oss" "code-oss"; }
     Mod+Tab { toggle-overview; }
-    Mod+N { spawn "bash" "-c" "foot --app-id=newsboat newsboat -C=~/.config/newsboat/config -u=~/sync/files/newsboat/urls -c=~/sync/files/newsboat/cache.db"; }
+    Mod+N { spawn-sh "foot --app-id=newsboat newsboat -C=~/.config/newsboat/config -u=~/sync/files/newsboat/urls -c=~/sync/files/newsboat/cache.db"; }
     Mod+Ctrl+Return { spawn "pcmanfm"; }
     Mod+M { spawn "mount.sh"; }
     Mod+P { spawn "pass.sh"; }
@@ -212,11 +209,11 @@ binds {
     XF86AudioMicMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
     Mod+Q allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
     
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "sh" "-c" "(wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED && echo 0 > $WOBSOCK) || (wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ --limit 1.0 && wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed 's/[^0-9]//g' > $WOBSOCK)"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "sh" "-c" "(wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED && echo 0 > $WOBSOCK) || (wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%- && wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed 's/[^0-9]//g' > $WOBSOCK)"; }
-    XF86AudioMute allow-when-locked=true { spawn "sh" "-c" "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && (wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED && echo 0 > $WOBSOCK) || wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed 's/[^0-9]//g' > $WOBSOCK"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "(wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED && echo 0 > $WOBSOCK) || (wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ --limit 1.0 && wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed 's/[^0-9]//g' > $WOBSOCK)"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "(wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED && echo 0 > $WOBSOCK) || (wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%- && wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed 's/[^0-9]//g' > $WOBSOCK)"; }
+    XF86AudioMute allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && (wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED && echo 0 > $WOBSOCK) || wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed 's/[^0-9]//g' > $WOBSOCK"; }
     // Extra mute button in case of no mediakeys
-    Mod+Shift+M allow-when-locked=true { spawn "sh" "-c" "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && (wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED && echo 0 > $WOBSOCK) || wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed 's/[^0-9]//g' > $WOBSOCK"; }
+    Mod+Shift+M allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && (wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED && echo 0 > $WOBSOCK) || wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed 's/[^0-9]//g' > $WOBSOCK"; }
 
     XF86MonBrightnessDown { spawn "brightness.sh" "down" "2"; }
     XF86MonBrightnessUp { spawn "brightness.sh" "up" "2"; }

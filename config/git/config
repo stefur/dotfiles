@@ -3,7 +3,7 @@
     email = stefan@furne.net
     signingkey = 2C60427BCF2BBD97
 [core]
-	editor = vim
+	editor = hx
 [commit]
 	gpgSign = true
 [gpg]
