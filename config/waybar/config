@@ -97,7 +97,7 @@
         "interface": "wl*",
         "format-linked": "\udb82\udd2d",
         "format-disconnected": "\udb82\udd2e",
-        "on-click": "foot --app-id='iwctl' iwctl",
+        "on-click": "foot --app-id='iwctl' --window-size-chars=80x40 iwctl",
         "on-click-right": "wifi.sh",
         "on-click-middle": "pkexec wg-quick up wg0",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}"
