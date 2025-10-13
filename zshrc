@@ -57,7 +57,6 @@ bindkey "^[[1;5B" history-incremental-search-forward
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 
-alias ngc="nix-collect-garbage"
 # Toggle monitor to TB/DP
 alias tm='ddcutil getvcp 60 | grep -q "0x0f" && ddcutil setvcp 60 10 || ddcutil setvcp 60 15'
 
@@ -78,6 +77,16 @@ alias df="df -h"
 alias xu="sudo xbps-install -Svu"
 alias xc="sudo xbps-remove -ROov"
 alias xr="sudo xbps-remove -Rv"
+
+xs() {
+    if [ $# -eq 0 ]; then
+        xbps-query
+    elif [ "${1#-}" != "$1" ]; then
+        xbps-query -MR "$@"
+    else
+        xbps-query -MRs "$@"
+    fi
+}
 
 # Case-insensitive autocompletion
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'

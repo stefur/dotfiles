@@ -6,11 +6,8 @@ spawn-at-startup "waybar"
 spawn-at-startup "mako"
 spawn-sh-at-startup "rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob"
 spawn-sh-at-startup "swayidle timeout 300 \"lock.sh\" timeout 600 \"wlopm --off '*'\" resume \"wlopm --on '*'\" timeout 900 \"sudo zzz\""
-//#spawn-at-startup "/usr/libexec/xdg-desktop-portal" "--replace"
 spawn-at-startup "gpg-agent" "--daemon"
-//var#spawn-at-startup "/usr/libexec/polkit-gnome-authentication-agent-1"
-//#spawn-at-startup "dbus-update-activation-environment" "DISPLAY"
-//#spawn-at-startup "xhost" "+local:"
+spawn-at-startup "/usr/libexec/polkit-gnome-authentication-agent-1"
 
 // For xwayland-satellite
 environment {
